@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // placement section code starts 
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.placement-carousel');
-    const cards = document.querySelectorAll('.placement-card');
+    const cards = document.querySelectorAll('.placement-card1');
     const prevBtn = document.querySelector('.prev-arrow');
     const nextBtn = document.querySelector('.next-arrow');
 
