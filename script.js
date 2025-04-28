@@ -96,3 +96,180 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+// placement section code starts 
+document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.placement-carousel');
+    const cards = document.querySelectorAll('.placement-card');
+    const prevBtn = document.querySelector('.prev-arrow');
+    const nextBtn = document.querySelector('.next-arrow');
+
+    let currentIndex = 0;
+    let cardsToShow = getCardsToShow();
+    let cardWidth = getCardWidth();
+    let totalCards = cards.length;
+
+    // Initially position cards
+    updateCarousel();
+
+    // Handle next button click
+    nextBtn.addEventListener('click', function () {
+        if (currentIndex < totalCards - cardsToShow) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    // Handle previous button click
+    prevBtn.addEventListener('click', function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    // Update carousel position
+    function updateCarousel() {
+        const offset = -currentIndex * cardWidth;
+        carousel.style.transform = `translateX(${offset}px)`;
+
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+
+        nextBtn.disabled = currentIndex >= totalCards - cardsToShow;
+        nextBtn.style.opacity = currentIndex >= totalCards - cardsToShow ? '0.5' : '1';
+    }
+
+    // Calculate how many cards to show based on viewport width
+    function getCardsToShow() {
+        const viewportWidth = window.innerWidth;
+
+        if (viewportWidth < 576) {
+            return 1;
+        } else if (viewportWidth < 768) {
+            return 2;
+        } else if (viewportWidth < 992) {
+            return 3;
+        } else {
+            return 3;
+        }
+    }
+
+    // Calculate card width including gap
+    function getCardWidth() {
+        // Get the first card's computed width
+        const firstCard = cards[0];
+        const computedStyle = window.getComputedStyle(firstCard);
+        const cardComputedWidth = parseFloat(computedStyle.getPropertyValue('min-width'));
+
+        // Get the gap between cards (20px defined in CSS)
+        const gap = 20;
+
+        return cardComputedWidth + gap;
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', function () {
+        // Recalculate values
+        cardsToShow = getCardsToShow();
+        cardWidth = getCardWidth();
+
+        // If current index would now be invalid, adjust it
+        if (currentIndex > totalCards - cardsToShow) {
+            currentIndex = Math.max(0, totalCards - cardsToShow);
+        }
+
+        // Update carousel position
+        updateCarousel();
+    });
+
+    // Touch swipe functionality for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum swipe distance
+
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left (next)
+            if (currentIndex < totalCards - cardsToShow) {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+
+        if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right (prev)
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+    }
+
+    // Auto slide functionality (optional)
+    let autoSlideInterval = null;
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(function () {
+            if (currentIndex < totalCards - cardsToShow) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }, 5000); // Change slide every 5 seconds
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    }
+
+    // Start auto sliding
+    startAutoSlide();
+
+    // Stop auto sliding on user interaction
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('touchstart', stopAutoSlide, { passive: true });
+
+    // Resume auto sliding when user leaves
+    carousel.addEventListener('mouseleave', startAutoSlide);
+
+    // Sponsor section scrolling functionality
+    const sponsorContainer = document.querySelector('.sponsor-container');
+
+    if (sponsorContainer) {
+        // Pause animation on hover
+        sponsorContainer.addEventListener('mouseenter', function () {
+            sponsorContainer.style.animationPlayState = 'paused';
+        });
+
+        // Resume animation when mouse leaves
+        sponsorContainer.addEventListener('mouseleave', function () {
+            sponsorContainer.style.animationPlayState = 'running';
+        });
+
+        // Touch events for mobile
+        sponsorContainer.addEventListener('touchstart', function () {
+            sponsorContainer.style.animationPlayState = 'paused';
+        }, { passive: true });
+
+        sponsorContainer.addEventListener('touchend', function () {
+            sponsorContainer.style.animationPlayState = 'running';
+        }, { passive: true });
+    }
+});
+// placement section code ends 
