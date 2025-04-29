@@ -273,3 +273,104 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 // placement section code ends 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove or comment out the carousel functionality since we're using a grid layout now
+    
+    // Keep the sponsor section code
+    const sponsorContainer = document.querySelector('.sponsor-container');
+    
+    if (sponsorContainer) {
+        // Sponsor container hover functionality
+        sponsorContainer.addEventListener('mouseenter', function() {
+            sponsorContainer.style.animationPlayState = 'paused';
+        });
+        
+        sponsorContainer.addEventListener('mouseleave', function() {
+            sponsorContainer.style.animationPlayState = 'running';
+        });
+        
+        // Touch events for mobile
+        sponsorContainer.addEventListener('touchstart', function() {
+            sponsorContainer.style.animationPlayState = 'paused';
+        }, { passive: true });
+        
+        sponsorContainer.addEventListener('touchend', function() {
+            sponsorContainer.style.animationPlayState = 'running';
+        }, { passive: true });
+    }
+
+    const carousel = document.querySelector('.placement-carousel');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.prev-arrow');
+    const nextBtn = document.querySelector('.next-arrow');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    // Update carousel position
+    function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        updateArrowVisibility();
+    }
+
+    // Update arrow visibility
+    function updateArrowVisibility() {
+        prevBtn.style.display = currentSlide === 0 ? 'none' : 'flex';
+        nextBtn.style.display = currentSlide === totalSlides - 1 ? 'none' : 'flex';
+    }
+
+    // Event Listeners
+    nextBtn.addEventListener('click', () => {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateCarousel();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateCarousel();
+        }
+    });
+
+    // Touch swipe functionality
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const difference = touchStartX - touchEndX;
+
+        if (Math.abs(difference) > swipeThreshold) {
+            if (difference > 0 && currentSlide < totalSlides - 1) {
+                nextBtn.click();
+            } else if (difference < 0 && currentSlide > 0) {
+                prevBtn.click();
+            }
+        }
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const newCardsToShow = getCardsToShow();
+        if (newCardsToShow !== cardsToShow) {
+            currentIndex = 0;
+            updateCarousel();
+        }
+    });
+
+    // Initial setup
+    updateArrowVisibility();
+}); 
