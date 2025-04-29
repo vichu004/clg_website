@@ -612,16 +612,16 @@
     /* Hide the top heading on desktop */
   }
 
-  .col-lg-6.d-none.d-lg-block {
+  .uni.col-lg-6.d-none.d-lg-block {
     display: flex !important;
     align-items: center;
     justify-content: center;
   }
 
-  .col-lg-6.d-none.d-lg-block:before {
-    content: "University @ GLANCE";
+  .uni.col-lg-6.d-none.d-lg-block:before {
+    content: "UNIVERSITY @ GLANCE";
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     letter-spacing: 2px;
     text-align: center;
@@ -630,7 +630,7 @@
 
 /* Specific style for 1024px width */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .col-lg-6.d-none.d-lg-block:before {
+  .uni.col-lg-6.d-none.d-lg-block:before {
     font-size: 3rem;
     /* Smaller font size for 1024px */
   }
