@@ -1440,3 +1440,298 @@ header h2 {
 } 
 
 /* placement section ends  */
+
+
+/* Global Styles */
+:root {
+  --primary-blue: #3d3597;
+  --primary-dark: #212529;
+  --airtel-red: #e40000;
+  --axis-maroon: #8e2249;
+  --accenture-purple: #4b2882;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.text-primary {
+  color: var(--primary-blue) !important;
+}
+
+/* Header Section */
+header {
+  padding: 3rem 0;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header h2 {
+  font-size: 1.8rem;
+}
+
+/* Placement Grid Layout */
+.placement-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.placement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+/* Carousel Container */
+.placement-carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Carousel Track */
+.placement-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Grid Layout for each slide */
+.carousel-slide {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* Card Styles */
+.placement-tag {
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-content {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text Styles */
+.profile-name {
+  font-size: 2.2rem;
+  margin-bottom: 2px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.placed-at {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+/* Company Logo */
+.company-logo {
+  background-color: white;
+  border-radius: 15px;
+  padding: 6px 15px;
+  display: inline-block;
+  max-width: 120px;
+  margin-bottom: 15px;
+  height:40px;
+  width: 110px;
+}
+
+.company-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Salary Section */
+.salary {
+  margin-bottom: 20px;
+}
+
+.amount {
+  font-size: 2.2rem;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.lpa {
+  font-size: 1.4rem;
+  margin-bottom: 2px;
+  font-weight: 300;
+}
+
+.salary-text {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  opacity: 0.8;
+}
+
+/* Profile Image */
+.profile-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 100px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Sponsor Section */
+.sponsor-section {
+  margin-top: 0px;
+  padding-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sponsor-container {
+  display: flex;
+  animation: scrollSponsors 20s linear infinite;
+  width: max-content;
+}
+
+.sponsor-logo {
+  max-height: 50px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: all 0.3s ease;
+  margin: 0 30px;
+}
+
+.sponsor-logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  animation-play-state: paused;
+}
+
+@keyframes scrollSponsors {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+/* Arrow Navigation */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-arrow {
+  left: 10px;
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+.carousel-arrow i {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .placement-container {
+      max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .placement-container {
+      max-width: 720px;
+  }
+  
+  .profile-name {
+      font-size: 1.5rem;
+  }
+  
+  .carousel-arrow {
+      width: 40px;
+      height: 40px;
+  }
+  
+  .carousel-arrow i {
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .placement-container {
+      max-width: 540px;
+  }
+  
+  .carousel-slide {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .placement-container {
+      max-width: 100%;
+      padding: 15px;
+  }
+  
+  .carousel-slide {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+  
+  .carousel-arrow {
+      width: 35px;
+      height: 35px;
+  }
+} 
