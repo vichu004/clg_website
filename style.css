@@ -137,139 +137,6 @@
   border-radius: 2px;
 }
 
-.placement-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px 15px;
-  transition: all 0.3s ease;
-  height: 100%;
-  border-bottom: 4px solid transparent;
-}
-
-.placement-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  border-bottom: 4px solid #2E308F;
-}
-
-.placement-card .icon-container {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 74, 153, 0.1);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.placement-card:hover .icon-container {
-  background-color: rgba(0, 74, 153, 0.2);
-  transform: scale(1.1);
-}
-
-.placement-card i {
-  color: #00AAE8;
-  transition: all 0.3s ease;
-}
-
-.placement-card:hover i {
-  transform: rotate(360deg);
-}
-
-.placement-card h3 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #e67e22;
-}
-
-.placement-card p {
-  color: #000;
-  font-size: 1.1rem;
-  margin-bottom: 0;
-}
-
-.placements-section {
-  background-color: #f8f9fa;
-  padding: 10px;
-  margin: 10px;
-}
-
-.placement-content {
-  text-align: center;
-  color: #2E308F;
-  font-size: large;
-}
-
-/* Counter animation */
-@keyframes countUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animated-number {
-  animation: countUp 1s ease forwards;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .placement-card {
-    margin-bottom: 20px;
-  }
-
-  .placement-card h3 {
-    font-size: 2rem;
-  }
-}
-
-
-/* media querry for all screens */
-
-
-/* Mobile: up to 480px or 767px */
-@media (max-width: 480px) {
-  .t1 {
-    font-size: 50px;
-  }
-
-  .t2 {
-    font-size: 25px;
-  }
-
-}
-
-@media (max-width: 767px) {
-
-  /* Styles for phones in general */
-  .t1 {
-    font-size: 50px;
-  }
-
-  .t2 {
-    font-size: 25px;
-  }
-}
-
-/* Tablet: 768px to 1024px */
-@media (min-width: 768px) and (max-width: 1024px) {
-  /* Styles for tablets */
-}
-
-/* Laptops and desktops: 1025px and above */
-@media (min-width: 1025px) {
-  /* Styles for laptops/desktops */
-}
-
 
 * {
   margin: 0;
@@ -708,7 +575,138 @@
 
 /*university glance style ends  */
 
+.placement-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+  border-bottom: 4px solid transparent;
+}
 
+.placement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-bottom: 4px solid #2E308F;
+}
+
+.placement-card .icon-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 74, 153, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.placement-card:hover .icon-container {
+  background-color: rgba(0, 74, 153, 0.2);
+  transform: scale(1.1);
+}
+
+.placement-card i {
+  color: #00AAE8;
+  transition: all 0.3s ease;
+}
+
+.placement-card:hover i {
+  transform: rotate(360deg);
+}
+
+.placement-card h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #e67e22;
+}
+
+.placement-card p {
+  color: #000;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.placements-section {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin: 10px;
+}
+
+.placement-content {
+  text-align: center;
+  color: #2E308F;
+  font-size: large;
+}
+
+/* Counter animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-number {
+  animation: countUp 1s ease forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .placement-card {
+    margin-bottom: 20px;
+  }
+
+  .placement-card h3 {
+    font-size: 2rem;
+  }
+}
+
+
+/* media querry for all screens */
+
+
+/* Mobile: up to 480px or 767px */
+@media (max-width: 480px) {
+  .t1 {
+    font-size: 50px;
+  }
+
+  .t2 {
+    font-size: 25px;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  /* Styles for phones in general */
+  .t1 {
+    font-size: 50px;
+  }
+
+  .t2 {
+    font-size: 25px;
+  }
+}
+
+/* Tablet: 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Styles for tablets */
+}
+
+/* Laptops and desktops: 1025px and above */
+@media (min-width: 1025px) {
+  /* Styles for laptops/desktops */
+}
 
 /* ngi glance style starts  */
 
@@ -873,7 +871,7 @@
 .school-categories-section {
   width: 100%;
   padding: 40px 20px;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
 }
 
 /* Section Title */
@@ -1735,3 +1733,92 @@ header h2 {
       height: 35px;
   }
 } 
+/* University Footer Styles */
+
+/* Main Footer */
+footer {
+  background-color: #2e308f;
+  color: #fff;
+}
+.logo-placeholder{
+    padding: 20px;
+    border-radius: 18px;
+}
+.logo-placeholder img{
+  padding-bottom: 7px;
+}
+/* Links styling */
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* List styling */
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+footer li {
+  margin-bottom: 0.5rem;
+}
+
+/* Logo placeholder */
+.logo-placeholder {
+  background-color: #fff;
+  width: 150px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+/* Footer bottom section */
+.footer-bottom {
+  background-color: #fdfdfd;
+  margin-bottom: -10px;
+}
+.footer-bottom a{
+  color: black;
+}
+
+/* Social media icons */
+.social-icons i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+/* Add spacing between social icons */
+.social-icons a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: black;
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+  .social-icons i {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+  }
+  
+  .logo-placeholder {
+    width: 120px;
+    height: 50px;
+  }
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 575.98px) {
+  footer .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .d-flex.flex-wrap.justify-content-center {
+    justify-content: flex-start !important;
+  }
+}
