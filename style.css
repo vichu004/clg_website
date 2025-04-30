@@ -1733,3 +1733,92 @@ header h2 {
       height: 35px;
   }
 } 
+/* University Footer Styles */
+
+/* Main Footer */
+footer {
+  background-color: #2e308f;
+  color: #fff;
+}
+.logo-placeholder{
+    padding: 20px;
+    border-radius: 18px;
+}
+.logo-placeholder img{
+  padding-bottom: 7px;
+}
+/* Links styling */
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* List styling */
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+footer li {
+  margin-bottom: 0.5rem;
+}
+
+/* Logo placeholder */
+.logo-placeholder {
+  background-color: #fff;
+  width: 150px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+/* Footer bottom section */
+.footer-bottom {
+  background-color: #fdfdfd;
+  margin-bottom: -10px;
+}
+.footer-bottom a{
+  color: black;
+}
+
+/* Social media icons */
+.social-icons i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+/* Add spacing between social icons */
+.social-icons a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: black;
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+  .social-icons i {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+  }
+  
+  .logo-placeholder {
+    width: 120px;
+    height: 50px;
+  }
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 575.98px) {
+  footer .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .d-flex.flex-wrap.justify-content-center {
+    justify-content: flex-start !important;
+  }
+}
