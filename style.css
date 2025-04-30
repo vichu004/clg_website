@@ -14,9 +14,7 @@
 .navbar ul li a {
   color:white;
   transition: 1s;
-  padding: 10px;
-  font-weight: bold;
-  
+  font-weight: bold; 
 }
 
 
@@ -123,7 +121,9 @@
   /* font-weight: bold; */
   color: #2E308F;
 }
-
+.sub-title{
+  font-size: 20px;
+}
 .section-title::after {
   content: '';
   position: absolute;
