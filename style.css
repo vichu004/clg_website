@@ -76,42 +76,6 @@
   font-size: 40px;
 }
 
-.scroll-wrapper {
-  width: 100%;
-  overflow: hidden;
-}
-
-.scroll-track {
-  animation: scroll-left 30s linear infinite;
-}
-
-.scroll-img {
-  width: 200px;
-  margin-right: 20px;
-  flex-shrink: 0;
-  margin: 10px;
-  border: 5px solid white(157, 14, 14);
-
-  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* section --- > ncpir  */
-
-* {
-  font-family: inline;
-  padding: 0px;
-  margin: 0px;
-}
 
 .section-title {
   position: relative;
@@ -1867,4 +1831,720 @@ footer li {
 .exp{
   position: relative;
   bottom: 700px;
+}
+
+
+
+
+
+/* testing style code  */
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+body {
+  font-family: 'Inter';
+  
+}
+
+/* Update nav styles to work with fixed hero section */
+.nav {
+  position: relative;
+  z-index: 2;
+}
+
+/* Top Navigation */
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #585858;
+  color: white;
+  height: 30px;
+  padding: 0 20px;
+}
+
+/* Welcome text scrolling */
+.welcome {
+  overflow: hidden;
+  white-space: nowrap;
+  height: 50px;
+  flex: 1;
+}
+
+.scroll-text {
+  display: inline-block;
+  font-weight: bolder;
+  padding-left: 100%;
+  padding-right: 50px;
+  padding-top: 15px;
+  animation: scroll-left 10s linear infinite;
+  color: white;
+  font-size: 17px;
+}
+
+/* Icon Section */
+.logo {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  height: 50px;
+}
+
+.logo svg {
+  transition: transform 0.3s ease;
+}
+
+.logo svg:hover {
+  transform: scale(1.2);
+}
+
+
+.facebook-logo,
+.twitter-logo,
+.email-logo {
+  margin-top: 12px;
+  width: 25px;
+  height: 25px;
+  fill: white;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.youtube-logo {
+  margin-top: 14px;
+  height: 40px;
+  width: 25px;
+  height: 25px;
+  fill: white;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+
+/* Lower Navigation */
+.nav-down {
+  background-color: rgba(96, 96, 96, 0.5); /* 20% opacity background */
+  height: auto;
+  padding: 1px 0;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2; /* Add z-index to keep it above hero section */
+}
+
+.pklogo {
+  height: 80px;
+  margin-top: 5px;
+  position: relative;
+  z-index: 3; /* Higher z-index to stay fully visible */
+  filter: saturate(2);
+}
+
+.nav-text {
+  position: relative;
+  z-index: 3; /* Higher z-index to stay fully visible */
+}
+
+.nav-text h4 {
+  color: #FFFFFF;
+  font-family: Inter;
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.ntx {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 70px;
+  padding: 15px 0;
+}
+
+.ntx h4:hover {
+  cursor: pointer;
+}
+
+.ntx h4 {
+  transition: transform 0.3s ease;
+}
+
+.ntx h4:hover {
+  transform: scale(1.2);
+  color: #ff9100;
+}
+
+/* Scroll Animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet */
+@media screen and (max-width: 992px) {
+  .scroll-text {
+    font-size: 15px;
+  }
+
+  .nav-text h4 {
+    font-size: 20px;
+  }
+
+  .logo svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .pklogo {
+    height: 65px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .ntx {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+  }
+
+  .ntx.show {
+    display: flex;
+  }
+
+  .head-sub {
+    position: absolute;
+    top: 0%;
+    transform: translateY(30px);
+    width: 100%;
+    z-index: 1;
+  }
+
+  .ntx h4 {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .ntx h4:hover {
+    background-color: #b8b8b8;
+  }
+
+  .menu-btn.open .menu-btn__burger {
+    background: transparent;
+  }
+
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg);
+    top: -160px;
+  }
+
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg);
+    top: -160px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .nav-top {
+    flex-direction: row;
+    
+  }
+
+  .welcome {
+    height: auto;
+  }
+
+  .scroll-text {
+    font-size: 14px;
+    padding-top: 5px;
+  }
+
+  .logo {
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .logo svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-text h4 {
+    font-size: 18px;
+  }
+
+  .ntx {
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .pklogo {
+    height: 55px;
+  }
+
+  .facebook-logo,
+  .twitter-logo,
+  .email-logo {
+    margin-top: 5px;
+    width: 25px;
+    height: 25px;
+    fill: white;
+    cursor: pointer;
+    margin-bottom: 7px;
+}
+
+  .youtube-logo {
+    margin-top: 5px;
+    height: 40px;
+    width: 25px;
+    height: 25px;
+    fill: white;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+}
+
+/* Add these new styles */
+.menu-btn {
+    display: none; /* Hide by default for desktop */
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-btn__burger {
+    width: 30px;
+    height: 3px;
+    background: #ffffff;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    left: 0;
+    background: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-10px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(10px);
+}
+
+/* Show menu button only for tablet and mobile */
+@media screen and (max-width: 992px) {
+    .menu-btn {
+        display: block; /* Show only on tablet and smaller screens */
+    }
+
+    .ntx {
+        display: none; /* Hide by default */
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+
+    .ntx.show {
+        display: flex;
+    }
+
+    .h4 {
+      width: auto;
+    }
+
+    .ntx h4 {
+        width: 345px;
+        padding: 15px;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .ntx h4:hover {
+        background-color: #b8b8b8;
+    }
+
+
+
+    .menu-btn.open .menu-btn__burger::before {
+        transform: rotate(45deg);
+        top: -160px;
+        
+
+    }
+
+    .menu-btn.open .menu-btn__burger::after {
+        transform: rotate(-45deg);
+        top: -160px;
+    }
+
+}
+
+/* Adjust for mobile */
+@media screen and (max-width: 600px) {
+    .menu-btn {
+        right: 15px;
+    }
+}
+
+/* Update the hero-section styles */
+.hero-section {
+  overflow-x: hidden;
+  width: auto;
+  height: 71vh;
+}
+
+@media screen and (max-width:992) {
+  .hero-section {
+    overflow-x: hidden;
+  }
+}
+
+.hero-vdo {
+
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 97%;
+  overflow: hidden;
+  margin-top: 0px;
+  z-index: -1;
+}
+
+.hero-vdo .black-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  height: 97%; /* Adjust the black layout */
+  background-color: rgb(0, 0, 0);
+  opacity: 0.2; /* You can adjust the opacity to make the overlay darker or lighter */
+  z-index: 1; /* Ensure the overlay is above the video */
+}
+
+
+.hero-vdo video {
+  width: 100%;
+  height: 97%;
+  margin-top: auto;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 992px) {
+  .hero-vdo {
+      overflow-x: hidden;
+      width: 100%;
+  }
+
+  .hero-vdo video {
+      width: 100%;
+      object-fit: cover;
+  }
+}
+
+.head-sub {
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
+  color: white;
+  font-family: 'Inter';
+  line-height: 1.6;
+  
+}
+
+.sub {
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+
+@media screen and (max-width: 922px) {
+  .head-sub {
+    margin-right: auto;
+    margin-left: 40px;
+    margin-top: 170px;
+    line-height: 1.6;
+    font-size: 20px;
+    position: absolute;
+    top: 0%;
+    transform: translateY(0px);
+    width: 700px;
+    z-index: 1;
+  }
+
+  .sub {
+    font-size: 20px;
+  }
+
+}
+
+/* Mobile L (425px) */
+@media screen and (max-width: 425px) {
+  .head-sub {
+    margin-right: auto;
+    margin-left: 10px;
+    margin-top: 230px;
+    line-height: 1.4;
+    position: absolute;
+    width: 95%;
+    z-index: 1;
+    padding: 0px;
+  }
+
+  .sub {
+    margin-top: 7px;
+    font-size: 15px;
+
+  }
+
+  .head {
+    font-size: 25px;
+  }
+}
+
+/* Mobile M (375px) */
+@media screen and (max-width: 375px) {
+  .head-sub {
+    margin-right: auto;
+    margin-left: 18px;
+    margin-top: 230px;
+    line-height: 1.3;
+    width: 90%;
+  }
+
+  .head{
+    font-size: 23px;
+  }
+
+  .sub {
+    font-size: 13px;
+  }
+}
+
+.explore {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(rgba(0, 170, 233, 1), rgba(46, 48, 143, 1));
+  opacity: 95%;
+  color: white;
+  border: none;
+  border-radius: 60px;
+  font-size: 20px;
+  font-family: 'Inter';
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .explore {
+    color:#FFFFFF;
+    border: none;
+    border-radius: 60px;
+    background: linear-gradient(rgba(0, 170, 233, 1), rgba(46, 48, 143, 1));
+    font-size: 18px;   /* Smaller text for tablet */
+    padding: 12px 25px; /* Smaller padding */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .explore {
+    color: #FFFFFF;
+    font-size: 15px;  /* Even smaller text for mobile */
+    padding: 10px 20px;  /* Even smaller padding */
+  }
+}
+
+/* Institutions Section */
+.institutions {
+  width: 100%;
+  background: #ffffff;
+  padding: 5px 0;
+  overflow: hidden;
+}
+
+.scroll-container {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
+
+/* Add pause on hover */
+.scroll-container:hover .scroll-content {
+  animation-play-state: paused;
+}
+
+.institution-item {
+  flex: 0 0 auto;
+  margin: 0 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 0px 4.9px 4px rgba(0, 0, 0, 0.25);
+  margin: 10px;
+}
+
+.institution-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+.institution-item img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  /* padding: 20px; */
+  text-align: center;
+}
+
+.institution-link:hover .overlay {
+  opacity: 1;
+}
+
+.institution-link:hover img {
+  transform: scale(1.05);
+}
+
+.overlay h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.overlay p {
+  font-size: 0.9em;
+}
+
+.learn-more {
+  background: linear-gradient(rgba(0, 170, 233, 1), rgba(46, 48, 143, 1));
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.learn-more:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive adjustments for institutions */
+@media screen and (max-width: 992px) {
+  .institution-item img {
+    width: 230px;
+    height: 130px;
+  }
+  
+  .overlay h3 {
+    font-size: 1em;
+  }
+  
+  .overlay p {
+    font-size: 0.8em;
+  }
+  
+  .learn-more {
+    padding: 6px 16px;
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .institution-item img {
+    width: 210px;
+    height: 110px;
+  }
+  
+  .overlay h3 {
+    font-size: 0.9em;
+  }
+  
+  .overlay p {
+    font-size: 0.7em;
+    margin-bottom: 10px;
+  }
+  
+  .learn-more {
+    padding: 5px 14px;
+    font-size: 0.8em;
+  }
+  
+  .institutions {
+    padding: 2px 0;
+  }
 }
