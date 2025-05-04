@@ -1808,29 +1808,171 @@ footer li {
     justify-content: flex-start !important;
   }
 }
+
+/* Explore Section */
+
+.container .section-title .sub-title{
+  font-size: 1.5rem;
+  color: #2E308F;
+}
+
+.container{
+  margin-bottom: 150px;
+}
+
+.items_exp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .common_for_explore{
-  margin-top: 100px;
+  margin-top: -150px;
+  width: 25%;
+  padding: 15px;
+  transition: all 0.3s ease;
 }
 .exp-main {
   background-image: url("img/explore_main_bg.png");
+  background-size: cover;
+  background-position: center;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   height: 50vh;
   margin-bottom: 10px;
   border-radius: 20px;
   position: relative;
+  justify-content: center;
 }
 
 .exp-main_overlay {
   background-color: blueviolet;
   width: 100%;
-  height: 50vh;
-  margin-bottom: 10px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 20px;
   opacity: 50%;
 }
 .exp{
   position: relative;
-  bottom: 700px;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.explore-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.explore-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.photo-gallery, .campus-tour, .video-gallery, .hostel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  font-weight: bolder;
+  font-size: 25px;
+  font-style: italic;
+  margin: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+
+/* Tablet view */
+@media screen and (max-width: 992px) {
+  .common_for_explore{
+    width: 50%;
+    margin-top: 20px;
+  }
+  .exp-main {
+    height: 60vh;
+  }
+  .explore-item {
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+  .common_for_explore{
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+  }
+  .exp-main {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+    margin-bottom: 10px;
+    border-radius: 15px;
+  }
+  .exp-main_overlay {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+  .items_exp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .photo-gallery, .campus-tour, .video-gallery, .hostel {
+    font-size: 20px;
+    padding: 12px 8px;
+  }
+  
+  .explore-item {
+    margin-bottom: 15px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .exp-main {
+    min-height: 40vh;
+  }
+  .photo-gallery, .campus-tour, .video-gallery, .hostel {
+    font-size: 18px;
+    padding: 10px 5px;
+  }
+  .explore-item {
+    max-width: 100%;
+  }
+  #explore_campus .section-title {
+    font-size: 1.8rem;
+  }
+  #explore_campus .sub-title {
+    font-size: 1rem;
+  }
 }
 
 
