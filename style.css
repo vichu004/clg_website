@@ -1892,7 +1892,7 @@ footer li {
   width: 100%;
   color: white;
   font-weight: bolder;
-  font-size: 25px;
+  font-size: 20px;
   font-style: italic;
   margin: 0;
   transition: all 0.3s ease;
@@ -1914,6 +1914,10 @@ footer li {
   }
   .explore-item {
     margin-bottom: 20px;
+  }
+  .photo-gallery, .campus-tour, .video-gallery, .hostel {
+    font-size: 30px;
+    padding: 15px 10px;
   }
 }
 
@@ -1943,7 +1947,7 @@ footer li {
   }
   
   .photo-gallery, .campus-tour, .video-gallery, .hostel {
-    font-size: 20px;
+    font-size: 25px;
     padding: 12px 8px;
   }
   
