@@ -1877,6 +1877,7 @@ header h2 {
 @media (max-width: 575px) {
   .placement-carousel-container {
     padding: 5px 0;
+    padding-right: 2%;
   }
   
   .carousel-slide {
