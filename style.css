@@ -1903,8 +1903,12 @@ header h2 {
   
   .company-logo {
     max-width: 85px;
-    height: 28px;
+    height: 30px;
     width: 85px;
+  }
+
+  .company-logo img {
+    height: 100%;
   }
   
   .profile-img {
