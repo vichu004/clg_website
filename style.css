@@ -83,7 +83,7 @@
   z-index: 1;
   color: white;
   text-align: center;
-  top: 50%;
+  top: 40%;
   transform: translateY(-70%);
 }
 
@@ -710,16 +710,23 @@
 
   /* Styles for phones in general */
   .t1 {
-    font-size: 50px;
+    font-size: 45px;
   }
 
   .t2 {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 
 /* Tablet: 768px to 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .t1 {
+    font-size: 80px;
+  }
+
+  .t2 {
+    font-size: 30px;
+  }
   /* Styles for tablets */
 }
 
