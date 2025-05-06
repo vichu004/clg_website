@@ -73,7 +73,7 @@
   top: 0;
   left: 0;
   min-width: 100%;
-  min-height: 80%;
+  min-height: 100%;
   object-fit: fill;
   z-index: -1;
 }
