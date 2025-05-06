@@ -34,6 +34,7 @@
   color: white;
   transition: 1s;
   font-weight: bold;
+  font-size: 20px;
 }
 
 
@@ -49,6 +50,14 @@
   -webkit-backdrop-filter: blur(10px);
   background-color: rgb(255, 255, 255, 0.2);
   /* Safari support */
+}
+
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav {
+      flex-direction: row;
+      gap: 25px;
+  }
 }
 
 .video-section {
