@@ -52,6 +52,17 @@
   /* Safari support */
 }
 
+.navbar-brand img {
+  height: 70px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-brand img {
+    height: 50px;
+  }
+  
+}
+
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav {
@@ -62,14 +73,13 @@
 
 .video-section {
   position: relative;
-  height: 80vh;
+  height: 95vh;
   overflow: hidden;
 }
 
 .background-video {
   position: absolute;
   top: 0;
-  left: 0;
   min-width: 100%;
   min-height: 100%;
   object-fit: fill;
@@ -693,6 +703,7 @@
 
 
 /* Mobile: up to 480px or 767px */
+
 @media (max-width: 480px) {
   .t1 {
     font-size: 50px;
