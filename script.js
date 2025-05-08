@@ -374,3 +374,57 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial setup
     updateArrowVisibility();
 }); 
+
+
+//Video playback helper for mobile devices
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.querySelector('.background-video');
+    
+    // Force play on page load
+    if (video) {
+      // Try to play the video
+      const playPromise = video.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Automatic playback started successfully
+          console.log('Video playback started successfully');
+        }).catch(error => {
+          // Auto-play was prevented
+          console.log('Auto-play was prevented:', error);
+          
+          // Add a play button for mobile devices that block autoplay
+          if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            const playButton = document.createElement('button');
+            playButton.innerHTML = 'Play Video';
+            playButton.className = 'mobile-play-button';
+            playButton.style.position = 'absolute';
+            playButton.style.zIndex = '10';
+            playButton.style.top = '50%';
+            playButton.style.left = '50%';
+            playButton.style.transform = 'translate(-50%, -50%)';
+            playButton.style.padding = '15px 30px';
+            playButton.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            playButton.style.color = 'white';
+            playButton.style.border = 'none';
+            playButton.style.borderRadius = '5px';
+            playButton.style.cursor = 'pointer';
+            
+            playButton.addEventListener('click', function() {
+              video.play();
+              this.remove();
+            });
+            
+            document.querySelector('.video-section').appendChild(playButton);
+          }
+        });
+      }
+      
+      // Handle visibility changes (when user switches tabs/apps)
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible') {
+          video.play();
+        }
+      });
+    }
+  });

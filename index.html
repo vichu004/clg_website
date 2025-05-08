@@ -67,7 +67,7 @@
         </div>
       </div>
     </nav>
-    <video muted loop playsinline class="background-video" poster="img/render.png" preload="auto">
+    <video autoplay muted loop playsinline class="background-video" poster="img/render.png" preload="auto">
       <source src="https://cdn-cf-east.streamable.com/video/mp4/0igbry.mp4?Expires=1746955731323&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=Y6ir-a8S8wAI-yB0OzJF4V-jeJMgmDXQsliS3pw6J~3rN0Jfb2vfd~ISJWJzqDt6UKWh5ZFlvzy-oALhltZ-Zcq3kXBMOmAwnKHGhVHzo7hVw6XBZIVyhNC5LzC4TiKVyoff8MD-eDr9nTolgRoT9IUZAiUqCcEZkghIXGrR~bP-qhOPgaXLq1L6xv0HsshV-Ubb5qggOF4d78Cnw5CeWFyO~YvlLOG7UjbFWTWfay4NE5PRG-6nThOAdgDOpja0LyUOcWZ9MizXmzc5Nmwv0ndOmlEqTY79KQa6t6FABH0JyKeTbmOwVGXpBloOFlIMk1oG83YzpSGEOzM1FXm1Og__" type="video/mp4">
       <source src="https://cdn-cf-east.streamable.com/video/mp4/0igbry.mp4?Expires=1746955731323&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=Y6ir-a8S8wAI-yB0OzJF4V-jeJMgmDXQsliS3pw6J~3rN0Jfb2vfd~ISJWJzqDt6UKWh5ZFlvzy-oALhltZ-Zcq3kXBMOmAwnKHGhVHzo7hVw6XBZIVyhNC5LzC4TiKVyoff8MD-eDr9nTolgRoT9IUZAiUqCcEZkghIXGrR~bP-qhOPgaXLq1L6xv0HsshV-Ubb5qggOF4d78Cnw5CeWFyO~YvlLOG7UjbFWTWfay4NE5PRG-6nThOAdgDOpja0LyUOcWZ9MizXmzc5Nmwv0ndOmlEqTY79KQa6t6FABH0JyKeTbmOwVGXpBloOFlIMk1oG83YzpSGEOzM1FXm1Og__" type="video/ogg">
       <source src="https://cdn-cf-east.streamable.com/video/mp4/0igbry.mp4?Expires=1746955731323&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=Y6ir-a8S8wAI-yB0OzJF4V-jeJMgmDXQsliS3pw6J~3rN0Jfb2vfd~ISJWJzqDt6UKWh5ZFlvzy-oALhltZ-Zcq3kXBMOmAwnKHGhVHzo7hVw6XBZIVyhNC5LzC4TiKVyoff8MD-eDr9nTolgRoT9IUZAiUqCcEZkghIXGrR~bP-qhOPgaXLq1L6xv0HsshV-Ubb5qggOF4d78Cnw5CeWFyO~YvlLOG7UjbFWTWfay4NE5PRG-6nThOAdgDOpja0LyUOcWZ9MizXmzc5Nmwv0ndOmlEqTY79KQa6t6FABH0JyKeTbmOwVGXpBloOFlIMk1oG83YzpSGEOzM1FXm1Og__" type="video/webm">
@@ -1358,60 +1358,7 @@
   <script src="script.js"></script>
   <script src="animation.js"></script>
   
-  <!-- Video playback helper for mobile devices -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const video = document.querySelector('.background-video');
-      
-      // Force play on page load
-      if (video) {
-        // Try to play the video
-        const playPromise = video.play();
-        
-        if (playPromise !== undefined) {
-          playPromise.then(_ => {
-            // Automatic playback started successfully
-            console.log('Video playback started successfully');
-          }).catch(error => {
-            // Auto-play was prevented
-            console.log('Auto-play was prevented:', error);
-            
-            // Add a play button for mobile devices that block autoplay
-            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-              const playButton = document.createElement('button');
-              playButton.innerHTML = 'Play Video';
-              playButton.className = 'mobile-play-button';
-              playButton.style.position = 'absolute';
-              playButton.style.zIndex = '10';
-              playButton.style.top = '50%';
-              playButton.style.left = '50%';
-              playButton.style.transform = 'translate(-50%, -50%)';
-              playButton.style.padding = '15px 30px';
-              playButton.style.backgroundColor = 'rgba(0,0,0,0.7)';
-              playButton.style.color = 'white';
-              playButton.style.border = 'none';
-              playButton.style.borderRadius = '5px';
-              playButton.style.cursor = 'pointer';
-              
-              playButton.addEventListener('click', function() {
-                video.play();
-                this.remove();
-              });
-              
-              document.querySelector('.video-section').appendChild(playButton);
-            }
-          });
-        }
-        
-        // Handle visibility changes (when user switches tabs/apps)
-        document.addEventListener('visibilitychange', function() {
-          if (document.visibilityState === 'visible') {
-            video.play();
-          }
-        });
-      }
-    });
-  </script>
+  
 </body>
 
 </html>
