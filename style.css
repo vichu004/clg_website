@@ -54,6 +54,7 @@
 
 .navbar-brand img {
   height: 70px;
+  filter: saturate(2);
 }
 
 @media screen and (max-width: 768px) {
