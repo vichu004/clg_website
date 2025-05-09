@@ -35,6 +35,7 @@
   transition: 1s;
   font-weight: bold;
   font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -105,11 +106,13 @@
   font-size: 100px;
   font-family:"league gothic", sans-serif;
   font-weight: bolder;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .t2 {
   font-size: 35px;
   font-family:"league gothic", sans-serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 
