@@ -375,3 +375,32 @@ document.addEventListener('DOMContentLoaded', function() {
     updateArrowVisibility();
 }); 
 
+// for vdo playy
+
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.querySelector('.background-video');
+    
+    // Try to play video after user interaction
+    document.addEventListener('click', function() {
+      video.play().catch(function(error) {
+        console.log('Autoplay prevented:', error);
+      });
+    });
+    
+    // Check if video is actually playing
+    setTimeout(function() {
+      if (video.paused) {
+        console.log('Video still paused after timeout, trying to play again');
+        video.play().catch(function(error) {
+          console.log('Playback still prevented:', error);
+        });
+      }
+    }, 1000);
+    
+    // Fallback to poster image if video fails to load
+    video.addEventListener('error', function() {
+      console.log('Video error occurred, using poster image');
+      video.style.display = 'none';
+      // You could add code here to show a static background instead
+    });
+  });
