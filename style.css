@@ -2963,5 +2963,27 @@ body {
 .campus360-btn a{
   color: #ffffff;
   font-weight: bolder;
-  font-size: x-large;
+  font-size: large;
+}
+
+@media screen and (max-width: 992px) {
+  .campus360-btn {
+    padding: 0.5em 1.5em;
+    font-size: medium;
+    margin-top: -20px
+  }
+  .campus360-btn a{
+    font-size: medium;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .campus360-btn {
+    padding: 0.4em 1.2em;
+    font-size: medium;
+  }
+  .campus360-btn a{
+    font-size: medium;
+  }
 }
