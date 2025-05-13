@@ -287,9 +287,11 @@
 }
 
 .founder-bio p {
+  margin-right: 20px;
   line-height: 1.6;
   margin-bottom: 15px;
   font-size: 1.05rem;
+  text-align:justify;
   color: #333;
 }
 
@@ -300,13 +302,14 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 80%;
 }
 
 /* Improved image styling for perfect responsive fit */
 .founder-details img {
   width: 100%;
+  max-width: 350px;
   height: 100%;
+  max-height: 350px;
   aspect-ratio: 1/1;
   /* Maintain square aspect ratio */
   object-fit: cover;
@@ -344,7 +347,7 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1179px) {
   .founders-name {
     flex-direction: column;
     align-items: center;
@@ -387,6 +390,7 @@
     margin: 0 auto;
     /* Center the image */
     display: block;
+    margin-top: 50px;
     /* Ensure proper margin centering */
   }
 
@@ -399,6 +403,7 @@
 
   .founder-bio h2 {
     margin-bottom: 15px;
+    margin-top: 50px;
   }
 
   .founder-bio p {
