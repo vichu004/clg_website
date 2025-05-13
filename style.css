@@ -2152,7 +2152,7 @@ footer li {
     margin-top: 20px;
   }
   .exp-main {
-    height: 60vh;
+    height: 200vh;
   }
   .explore-item {
     margin-bottom: 20px;
@@ -2935,4 +2935,29 @@ body {
   .institutions {
     padding: 2px 0;
   }
+}
+
+
+.campus360-btn {
+  margin-top: 30px;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  background: #ff49f0;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 60px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow : #000000 2px 3px 0px 0px ;
+  transition: all 0.3s ease;
+}
+
+
+.campus360-btn a{
+  color: #ffffff;
+  font-weight: bolder;
+  font-size: x-large;
 }
