@@ -916,6 +916,12 @@
   scale: 1.05;
 }
 
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+
 /* acheivements style ends  */
 
 
