@@ -99,19 +99,21 @@
   color: white;
   text-align: center;
   top: 40%;
-  transform: translateY(-70%);
+  transform: translateY(-60%);
 }
 
 .t1 {
-  font-size: 100px;
+  margin-bottom: -40px;
+  font-size: 200px;
   font-family:"league gothic", sans-serif;
   font-weight: bolder;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .t2 {
-  font-size: 35px;
+  font-size: 70px;
   font-family:"league gothic", sans-serif;
+  font-weight: bolder;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
