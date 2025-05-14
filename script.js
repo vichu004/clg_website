@@ -374,3 +374,43 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial setup
     updateArrowVisibility();
 }); 
+
+
+
+// Video Modal Functions
+function openVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('campus360Video');
+    
+    // Set the video source
+    videoFrame.src = 'https://youtu.be/eoDXeudl1KY?si=YMzBs0Z_2js94Y2a';
+    
+    // Show the modal
+    modal.style.display = 'block';
+    
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('campus360Video');
+    
+    // Hide the modal
+    modal.style.display = 'none';
+    
+    // Clear the video source to stop playback
+    videoFrame.src = '';
+    
+    // Re-enable body scrolling
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Close modal when clicking outside the video
+  window.onclick = function(event) {
+    const modal = document.getElementById('videoModal');
+    if (event.target == modal) {
+      closeVideoModal();
+    }
+  } 
+  
