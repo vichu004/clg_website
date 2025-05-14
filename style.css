@@ -2959,7 +2959,7 @@ body {
   padding: 0.6em 2em;
   border: none;
   outline: none;
-  background: #ff49f0;
+  background: #ffffff;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -2967,13 +2967,12 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  box-shadow : #000000 2px 3px 0px 0px ;
   transition: all 0.3s ease;
 }
 
 
 .campus360-btn a{
-  color: #ffffff;
+  color: #e67e22;
   font-weight: bolder;
   font-size: large;
 }
