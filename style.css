@@ -99,7 +99,7 @@
   color: white;
   text-align: center;
   top: 40%;
-  transform: translateY(-60%);
+  transform: translateY(-30%);
 }
 
 .t1 {
@@ -725,11 +725,18 @@
 
 @media (max-width: 480px) {
   .t1 {
-    font-size: 50px;
+    font-size: 80px;
+    margin-bottom: 8px;
   }
 
   .t2 {
-    font-size: 25px;
+    font-size: 30px;
+
+  }
+
+  .content {
+    top: 30%;
+    transform: translateY(-20%);
   }
 
 }
@@ -738,29 +745,37 @@
 
   /* Styles for phones in general */
   .t1 {
-    font-size: 40px;
+    font-size: 60px;
   }
 
   .t2 {
-    font-size: 18px;
+    font-size: 25px;
   }
 }
 
 /* Tablet: 768px to 1024px */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) {
   .t1 {
-    font-size: 75px;
+    font-size: 90px;
+    margin-top: -100px;
   }
 
   .t2 {
-    font-size: 30px;
+    font-size: 40px;
+    margin-top: 30px;
   }
   /* Styles for tablets */
 }
 
 /* Laptops and desktops: 1025px and above */
-@media (min-width: 1025px) {
-  /* Styles for laptops/desktops */
+@media (min-width: 1024px) {
+  .t1 {
+    font-size: 160px;
+  }
+
+  .t2 {
+    font-size: 60px;
+  }
 }
 
 /* ngi glance style starts  */
