@@ -921,10 +921,6 @@
   transition: 1s;
 }
 
-.acheiments_card img {
-  border-radius: 20px;
-}
-
 .inner_title_acheivements {
   font-weight: bolder;
   color: blue;

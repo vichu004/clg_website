@@ -275,28 +275,28 @@ document.addEventListener('DOMContentLoaded', function () {
 // placement section code ends 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Remove or comment out the carousel functionality since we're using a grid layout now
-    
+
     // Keep the sponsor section code
     const sponsorContainer = document.querySelector('.sponsor-container');
-    
+
     if (sponsorContainer) {
         // Sponsor container hover functionality
-        sponsorContainer.addEventListener('mouseenter', function() {
+        sponsorContainer.addEventListener('mouseenter', function () {
             sponsorContainer.style.animationPlayState = 'paused';
         });
-        
-        sponsorContainer.addEventListener('mouseleave', function() {
+
+        sponsorContainer.addEventListener('mouseleave', function () {
             sponsorContainer.style.animationPlayState = 'running';
         });
-        
+
         // Touch events for mobile
-        sponsorContainer.addEventListener('touchstart', function() {
+        sponsorContainer.addEventListener('touchstart', function () {
             sponsorContainer.style.animationPlayState = 'paused';
         }, { passive: true });
-        
-        sponsorContainer.addEventListener('touchend', function() {
+
+        sponsorContainer.addEventListener('touchend', function () {
             sponsorContainer.style.animationPlayState = 'running';
         }, { passive: true });
     }
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.querySelector('.prev-arrow');
     const nextBtn = document.querySelector('.next-arrow');
-    
+
     let currentSlide = 0;
     const totalSlides = slides.length;
 
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial setup
     updateArrowVisibility();
-}); 
+});
 
 
 
@@ -381,36 +381,36 @@ document.addEventListener('DOMContentLoaded', function() {
 function openVideoModal() {
     const modal = document.getElementById('videoModal');
     const videoFrame = document.getElementById('campus360Video');
-    
+
     // Set the video source
-    videoFrame.src = 'https://youtu.be/eoDXeudl1KY?si=YMzBs0Z_2js94Y2a';
-    
+    const vid_id='GKOQGNnsRYc'
+    videoFrame.src = `https://www.youtube.com/embed/${vid_id}?autoplay=1`;
+
     // Show the modal
     modal.style.display = 'block';
-    
+
     // Prevent body scrolling when modal is open
     document.body.style.overflow = 'hidden';
-  }
-  
-  function closeVideoModal() {
+}
+
+function closeVideoModal() {
     const modal = document.getElementById('videoModal');
     const videoFrame = document.getElementById('campus360Video');
-    
+
     // Hide the modal
     modal.style.display = 'none';
-    
+
     // Clear the video source to stop playback
     videoFrame.src = '';
-    
+
     // Re-enable body scrolling
     document.body.style.overflow = 'auto';
-  }
-  
-  // Close modal when clicking outside the video
-  window.onclick = function(event) {
+}
+
+// Close modal when clicking outside the video
+window.onclick = function (event) {
     const modal = document.getElementById('videoModal');
     if (event.target == modal) {
-      closeVideoModal();
+        closeVideoModal();
     }
-  } 
-  
+}
