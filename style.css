@@ -913,6 +913,7 @@
 
 
 /* achements style starts  */
+
 .acheiments_card {
   border: 1px solid black;
   border-radius: 20px;
@@ -931,6 +932,7 @@
 
 .acheiments_card:hover {
   scale: 1.05;
+  transition: 1s;
 }
 
 .card-img-top {
