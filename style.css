@@ -2971,7 +2971,7 @@ body {
 }
 
 
-.campus360-btn a{
+.campus360-btn span{
   color: #e67e22;
   font-weight: bolder;
   font-size: large;
@@ -2982,7 +2982,7 @@ body {
     font-size: medium;
     margin-top: -20px
   }
-  .campus360-btn a{
+  .campus360-btn span{
     font-size: medium;
   }
   
@@ -2993,7 +2993,7 @@ body {
     padding: 0.4em 1.2em;
     font-size: medium;
   }
-  .campus360-btn a{
+  .campus360-btn span{
     font-size: medium;
   }
 }
