@@ -747,7 +747,7 @@
 /* Tablet: 768px to 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
   .t1 {
-    font-size: 80px;
+    font-size: 75px;
   }
 
   .t2 {
@@ -2163,7 +2163,7 @@ footer li {
     margin-top: 20px;
   }
   .exp-main {
-    height: 100vh;
+    height: 110vh;
   }
   .explore-item {
     margin-bottom: 20px;
@@ -2974,7 +2974,6 @@ body {
 
 @media screen and (max-width: 992px) {
   .campus360-btn {
-    padding: 0.5em 1.5em;
     font-size: medium;
     margin-top: -20px
   }
