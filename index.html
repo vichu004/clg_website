@@ -1229,15 +1229,17 @@
 </section>
 
 <!-- Video Modal -->
+<!-- Add unmute button inside modal -->
 <div id="videoModal" class="modal">
   <div class="modal-content">
     <span class="close-modal" onclick="closeVideoModal()">&times;</span>
-    <div class="video-container">
-      <iframe id="campus360Video" width="100%" height="100%" frameborder="0" allowfullscreen
-        allow="autoplay;"></iframe>
+    <div class="video-container" style="position: relative;">
+      <iframe id="campus360Video" width="100%" height="100%" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+      <button id="unmuteBtn"  bottom: 20px; right: 20px; z-index: 10;">🔇 Unmute</button>
     </div>
   </div>
 </div>
+
 
 <!-- explore campus section  ends  -->
 

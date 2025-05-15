@@ -381,36 +381,33 @@ document.addEventListener('DOMContentLoaded', function () {
 function openVideoModal() {
     const modal = document.getElementById('videoModal');
     const videoFrame = document.getElementById('campus360Video');
+    const unmuteBtn = document.getElementById('unmuteBtn');
 
-    // Set the video source
-    const vid_id='GKOQGNnsRYc'
-    videoFrame.src = `https://www.youtube.com/embed/${vid_id}?autoplay=1`;
+    const vid_id='1ah3JgKGa7o';
+    videoFrame.src = `https://www.youtube.com/embed/${vid_id}?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0&playsinline=1&mute=1`;
 
-    // Show the modal
     modal.style.display = 'block';
-
-    // Prevent body scrolling when modal is open
     document.body.style.overflow = 'hidden';
+
+    // Show unmute button
+    unmuteBtn.style.display = 'block';
+    unmuteBtn.textContent = '🔇 Unmute';
+
+    unmuteBtn.onclick = () => {
+      videoFrame.src = `https://www.youtube.com/embed/${vid_id}?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0&playsinline=1&mute=0`;
+      unmuteBtn.style.display = 'none'; // hide after unmute
+    };
 }
 
 function closeVideoModal() {
     const modal = document.getElementById('videoModal');
     const videoFrame = document.getElementById('campus360Video');
+    const unmuteBtn = document.getElementById('unmuteBtn');
 
-    // Hide the modal
     modal.style.display = 'none';
-
-    // Clear the video source to stop playback
     videoFrame.src = '';
-
-    // Re-enable body scrolling
     document.body.style.overflow = 'auto';
-}
 
-// Close modal when clicking outside the video
-window.onclick = function (event) {
-    const modal = document.getElementById('videoModal');
-    if (event.target == modal) {
-        closeVideoModal();
-    }
+    // Hide unmute button on close
+    unmuteBtn.style.display = 'none';
 }
