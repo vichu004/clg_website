@@ -275,28 +275,28 @@ document.addEventListener('DOMContentLoaded', function () {
 // placement section code ends 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Remove or comment out the carousel functionality since we're using a grid layout now
-    
+
     // Keep the sponsor section code
     const sponsorContainer = document.querySelector('.sponsor-container');
-    
+
     if (sponsorContainer) {
         // Sponsor container hover functionality
-        sponsorContainer.addEventListener('mouseenter', function() {
+        sponsorContainer.addEventListener('mouseenter', function () {
             sponsorContainer.style.animationPlayState = 'paused';
         });
-        
-        sponsorContainer.addEventListener('mouseleave', function() {
+
+        sponsorContainer.addEventListener('mouseleave', function () {
             sponsorContainer.style.animationPlayState = 'running';
         });
-        
+
         // Touch events for mobile
-        sponsorContainer.addEventListener('touchstart', function() {
+        sponsorContainer.addEventListener('touchstart', function () {
             sponsorContainer.style.animationPlayState = 'paused';
         }, { passive: true });
-        
-        sponsorContainer.addEventListener('touchend', function() {
+
+        sponsorContainer.addEventListener('touchend', function () {
             sponsorContainer.style.animationPlayState = 'running';
         }, { passive: true });
     }
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.querySelector('.prev-arrow');
     const nextBtn = document.querySelector('.next-arrow');
-    
+
     let currentSlide = 0;
     const totalSlides = slides.length;
 
@@ -373,4 +373,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial setup
     updateArrowVisibility();
-}); 
+});
+
+
+
+// Video Modal Functions
+function openVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('campus360Video');
+    const unmuteBtn = document.getElementById('unmuteBtn');
+
+    const vid_id='1ah3JgKGa7o';
+    videoFrame.src = `https://www.youtube.com/embed/${vid_id}?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0&playsinline=1&mute=1`;
+
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+
+    // Show unmute button
+    unmuteBtn.style.display = 'block';
+    unmuteBtn.textContent = '🔇 Unmute';
+
+    unmuteBtn.onclick = () => {
+      videoFrame.src = `https://www.youtube.com/embed/${vid_id}?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0&playsinline=1&mute=0`;
+      unmuteBtn.style.display = 'none'; // hide after unmute
+    };
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('campus360Video');
+    const unmuteBtn = document.getElementById('unmuteBtn');
+
+    modal.style.display = 'none';
+    videoFrame.src = '';
+    document.body.style.overflow = 'auto';
+
+    // Hide unmute button on close
+    unmuteBtn.style.display = 'none';
+}
