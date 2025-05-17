@@ -377,6 +377,106 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// Toggle between NGI and University glance sections
+document.addEventListener('DOMContentLoaded', function() {
+    const universityBtn = document.querySelector('.university-btn');
+    const ngiBtn = document.querySelector('.ngi-btn');
+    const universityGlance = document.getElementById('universityglance');
+    const ngiGlance = document.getElementById('ngiglance');
+
+    // Set initial state (university glance visible, ngi glance hidden)
+    if (universityGlance && ngiGlance) {
+        universityGlance.style.display = 'block';
+        ngiGlance.style.display = 'none';
+        
+        // Set initial active state for buttons
+        if (universityBtn && ngiBtn) {
+            universityBtn.classList.add('active');
+            ngiBtn.classList.remove('active');
+        }
+    }
+
+    // Add click event for university button
+    if (universityBtn) {
+        universityBtn.addEventListener('click', function() {
+            if (universityGlance && ngiGlance) {
+                // Toggle content visibility
+                universityGlance.style.display = 'block';
+                ngiGlance.style.display = 'none';
+                
+                // Toggle active state for buttons
+                universityBtn.classList.add('active');
+                ngiBtn.classList.remove('active');
+            }
+        });
+    }
+
+    // Add click event for NGI button
+    if (ngiBtn) {
+        ngiBtn.addEventListener('click', function() {
+            if (universityGlance && ngiGlance) {
+                // Toggle content visibility
+                universityGlance.style.display = 'none';
+                ngiGlance.style.display = 'block';
+                
+                // Toggle active state for buttons
+                ngiBtn.classList.add('active');
+                universityBtn.classList.remove('active');
+            }
+        });
+    }
+});
+
+// Toggle between NGI and University infrastructure sections
+document.addEventListener('DOMContentLoaded', function() {
+    const universityiBtn = document.querySelector('.universityi-btn');
+    const ngiiBtn = document.querySelector('.ngii-btn');
+    const universityInfrastructure = document.getElementById('universityinfrastructure');
+    const ngiInfrastructure = document.getElementById('ngiinfrastructure');
+
+    // Set initial state (university infrastructure visible, ngi infrastructure hidden)
+    if (universityInfrastructure && ngiInfrastructure) {
+        universityInfrastructure.style.display = 'block';
+        ngiInfrastructure.style.display = 'none';
+        
+        // Set initial active state for buttons
+        if (universityiBtn && ngiiBtn) {
+            universityiBtn.classList.add('active');
+            ngiiBtn.classList.remove('active');
+        }
+    }
+
+    // Add click event for university infrastructure button
+    if (universityiBtn) {
+        universityiBtn.addEventListener('click', function() {
+            if (universityInfrastructure && ngiInfrastructure) {
+                // Toggle content visibility
+                universityInfrastructure.style.display = 'block';
+                ngiInfrastructure.style.display = 'none';
+                
+                // Toggle active state for buttons
+                universityiBtn.classList.add('active');
+                ngiiBtn.classList.remove('active');
+            }
+        });
+    }
+
+    // Add click event for NGI infrastructure button
+    if (ngiiBtn) {
+        ngiiBtn.addEventListener('click', function() {
+            if (universityInfrastructure && ngiInfrastructure) {
+                // Toggle content visibility
+                universityInfrastructure.style.display = 'none';
+                ngiInfrastructure.style.display = 'block';
+                
+                // Toggle active state for buttons
+                ngiiBtn.classList.add('active');
+                universityiBtn.classList.remove('active');
+            }
+        });
+    }
+});
+
 // Video Modal Functions
 function openVideoModal() {
     const modal = document.getElementById('videoModal');
