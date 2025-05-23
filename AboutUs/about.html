@@ -1,0 +1,125 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - P.K.DAS University</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="py-2 bg-white shadow-sm">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-link text-dark p-0 me-3" onclick="goBack()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="P.K.DAS University Logo" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#" class="text-decoration-none">PK DAS</a></li>
+                <li class="breadcrumb-item"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Welcome</li>
+            </ol>
+        </div>
+    </nav>
+
+    <section class="py-5 page-fade">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-title">ABOUT US</div>
+                    <div class="about-underline"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <div class="list-group">
+                        <a href="founder-chairman.html" class="list-group-item list-group-item-action">Founder Chairman</a>
+                        <a href="chancellor.html" class="list-group-item list-group-item-action">Chancellor</a>
+                        <a href="pro-chancellor.html" class="list-group-item list-group-item-action">Pro Chancellor</a>
+                        <a href="vice-chancellor.html" class="list-group-item list-group-item-action">Vice Chancellor</a>
+                        <a href="registrar.html" class="list-group-item list-group-item-action">Registrar</a>
+                        <a href="courses.html" class="list-group-item list-group-item-action">Courses</a>
+                        <a href="ngi-institution.html" class="list-group-item list-group-item-action">ALL NGI Institution</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="h5 mt-4 mb-3">About</h4>
+                            <h3 class="h3 mb-4">P. K. DAS Deemed-to-be University</h3>
+                            
+                            <div class="university-content">
+                                <p class="mb-4">P.K Das Institute of Social Science, Health Sciences & Technology is a Deemed to be University under Category Approved by Ministry of Education and University Grants Commission under Section3 of UGC 1956.</p>
+                                
+                                <p class="mb-4">University aims to impart complete Present and Ancient Indian Education in the Academic Complex which has Courses of Art, Science, Technology, Heritage, Health, Language, Literature etc. University Provides World - Class Education, State - of - the - Art Infrastructure & a Vibrant Learning Environment.</p>
+                                
+                                <h4 class="h5 mt-4 mb-3">Vision</h4>
+                                <p class="fst-italic">"Multi-Disciplinary Higher Educational Research Institute of Excellence imparting ethically driven Indian origin Education combined with Modern Science and Technology to have a National Outlook and Global Impact."</p>
+                                
+                                <h4 class="h5 mt-4 mb-3">Mission</h4>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item border-0 ps-0">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>Have an Excellent Curriculum of Multidisciplinary in nature covering all the fields of Indian Knowledge System embedded with Modern Science and Technology
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>Encourage showcasing of hidden Talents of Students and Staff through regular activities in Multidisciplinary fields like Sports/Cultural/Yoga etc.
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>Provide state of the Art Infrastructure with Research Facilities to encourage Innovative Activities
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>Make all the Programmes Distinctive in one or the other way by incorporating new Ideas and Contents into the Curriculum
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- footer section starts  -->
+
+
+<!-- At the place where you want the footer -->
+<div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+    
+    
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+</body>
+</html>

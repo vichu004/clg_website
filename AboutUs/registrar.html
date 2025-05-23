@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar - P.K.DAS University</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="py-2 bg-white shadow-sm">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-link text-dark p-0 me-3" onclick="goBack()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="P.K.DAS University Logo" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#" class="text-decoration-none">PK DAS</a></li>
+                <li class="breadcrumb-item"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Registrar</li>
+            </ol>
+        </div>
+    </nav>
+
+    <section class="py-5 page-fade">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-title">ABOUT US</div>
+                    <div class="about-underline"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <div class="list-group">
+                        <a href="founder-chairman.html" class="list-group-item list-group-item-action">Founder Chairman</a>
+                        <a href="chancellor.html" class="list-group-item list-group-item-action">Chancellor</a>
+                        <a href="pro-chancellor.html" class="list-group-item list-group-item-action">Pro Chancellor</a>
+                        <a href="vice-chancellor.html" class="list-group-item list-group-item-action">Vice Chancellor</a>
+                        <a href="registrar.html" class="list-group-item list-group-item-action active">Registrar</a>
+                        <a href="courses.html" class="list-group-item list-group-item-action">Courses</a>
+                        <a href="ngi-institution.html" class="list-group-item list-group-item-action">ALL NGI Institution</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center mb-4">
+                                <div class="col-md-8">
+                                    <h2 class="h4 mb-2">Registrar</h2>
+                                    <h3 class="h3 mb-0">Dr. B. Anirudhan</h3>
+                                </div>
+                                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                    <img src="img/4.png" alt="Registrar" class="profile-image img-fluid">
+                                </div>
+                            </div>
+                            
+                            <div class="profile-content fade-in">
+                                <div class="profile-description">
+                                    <p class="mb-4">Greetings from the Office of the Registrar!</p>
+
+                                    <p class="mb-4">P K DAS Institute of Social Sciences, Health Sciences and Technology, Deemed to be university under District Category is the manifestation of a long-term dream. We envisage a purposeful academic journey with a strong foundation in Student Support, Transparency, Excellence in Administration and Leadership.</p>
+                                    
+                                    <p class="mb-4">Our University plans to offer a unique blend of programs that cater to a wide spectrum of interests: from cultural heritage in B. Sc. Indology and creativity in Bachelor of Performing Arts, to high-tech fields like B. Tech. in AI & Machine Imaging, Aviation & Drone Engineering, and critical healthcare programs like Radiology and Medical Laboratory Technology, as Distinct Programmes, to begin with. We ensure transparent admission processes to comprehensive academic support, we ensure that every student experiences ease, clarity, and trust throughout their academic tenure. Our digital systems and fully automated efficient services make campus life more accessible and enriching, allowing students to focus on what truly matters - learning and growth with a clear focus on National Education Policy.</p>
+                                    
+                                    <p class="mb-4">We also ensure robust transport, hostels, amenities and student services, making our campus experience efficient lively and enjoyable. With dedicated and experienced faculty and student-friendly administration, our goal is to support you at every step of the way forward from Admission to Graduation aiming at global placement, Entrepreneurship and Higher Education Prospects.</p>
+
+                                    <p class="mb-4">As the Founder Registrar (Proposed), I assure a professional, efficient, and enriching academic and administrate experience. If you're looking for a University that combines academic strength, practical exposure, and a pathway to your dream career, beyond expectations you've found your destination here with P K DAS University.</p>
+
+                                    <p class="signature">Together for Wisdom</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <script>
+    fetch("footer.html")
+     .then(response => response.text())
+     .then(data => {
+       document.getElementById("footer").innerHTML = data;
+       });
+    </script>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+</body>
+</html> 

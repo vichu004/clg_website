@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Chancellor - P.K.DAS University</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="py-2 bg-white shadow-sm">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-link text-dark p-0 me-3" onclick="goBack()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="P.K.DAS University Logo" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#" class="text-decoration-none">PK DAS</a></li>
+                <li class="breadcrumb-item"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Pro Chancellor</li>
+            </ol>
+        </div>
+    </nav>
+
+    <section class="py-5 page-fade">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-title">ABOUT US</div>
+                    <div class="about-underline"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <div class="list-group">
+                        <a href="founder-chairman.html" class="list-group-item list-group-item-action">Founder Chairman</a>
+                        <a href="chancellor.html" class="list-group-item list-group-item-action">Chancellor</a>
+                        <a href="pro-chancellor.html" class="list-group-item list-group-item-action active">Pro Chancellor</a>
+                        <a href="vice-chancellor.html" class="list-group-item list-group-item-action">Vice Chancellor</a>
+                        <a href="registrar.html" class="list-group-item list-group-item-action">Registrar</a>
+                        <a href="courses.html" class="list-group-item list-group-item-action">Courses</a>
+                        <a href="ngi-institution.html" class="list-group-item list-group-item-action">ALL NGI Institution</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center mb-4">
+                                <div class="col-md-8">
+                                    <h2 class="h4 mb-2">Pro Chancellor</h2>
+                                    <h3 class="h3 mb-0">Dr. P. Krishnakumar</h3>
+                                </div>
+                                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                    <img src="img/2.png" alt="Pro Chancellor" class="profile-image img-fluid">
+                                </div>
+                            </div>
+                            
+                            <div class="profile-content fade-in">
+                                <div class="profile-description">
+                                    <p class="mb-4">P K DAS Institute of Social Science, Health Sciences and Technology, has been initiated believing in mentoring young minds that will shape the future of our nation and beyond. As the Pro-Chancellor, I take immense pride in being part of an institution that harmonizes academic excellence with human values to compete with global standards.</p>
+                                    
+                                    <p class="mb-4">Our University stands as a beacon of transformative education where tradition meets innovation. We understand that the world is evolving rapidly, and we are committed to preparing students who are not just knowledgeable, but also adaptable, ethical and socially responsible. Through a curriculum designed to bridge theory and practice, and a campus enriched with modern amenities, we offer a learning experience that is holistic, immersive, and deeply relevant focusing on National Educational Policy.</p>
+                                    
+                                    <p class="mb-4">What sets us apart is our Interdisciplinary and Transdisciplinary approach, integrating Social Sciences, Health Sciences, and Technology to address complex real-world challenges. Our students are encouraged to question, explore, and innovate with purpose. From research initiatives to community outreach programmes, we ensure that learning goes beyond classrooms and syllabus to contribute to meaningful societal impact.</p>
+
+                                    <p class="mb-4">We are proud of our dedicated faculty, world class laboratories, Industry linkages, and a campus culture that promotes creativity and collaboration. Here, every student is empowered to dream big and supported to achieve those dreams.</p>
+
+                                    <p class="mb-4">Choosing P K DAS University means choosing an education that transforms you Intellectually, Emotionally, and Professionally. We invite you to be part of a community that not only aspires to succeed but also to signify your partnership.</p>
+
+                                    <p class="signature">In Service of Learning</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <script>
+    fetch("footer.html")
+     .then(response => response.text())
+     .then(data => {
+       document.getElementById("footer").innerHTML = data;
+       });
+    </script>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+</body>
+</html> 

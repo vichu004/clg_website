@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founder Chairman - P.K.DAS University</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="py-2 bg-white shadow-sm">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-link text-dark p-0 me-3" onclick="goBack()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="P.K.DAS University Logo" class="logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#" class="text-decoration-none">PK DAS</a></li>
+                <li class="breadcrumb-item"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Founder Chairman</li>
+            </ol>
+        </div>
+    </nav>
+
+    <section class="py-5 page-fade">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-title">ABOUT US</div>
+                    <div class="about-underline"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <div class="list-group">
+                        <a href="founder-chairman.html" class="list-group-item list-group-item-action active">Founder Chairman</a>
+                        <a href="chancellor.html" class="list-group-item list-group-item-action">Chancellor</a>
+                        <a href="pro-chancellor.html" class="list-group-item list-group-item-action">Pro Chancellor</a>
+                        <a href="vice-chancellor.html" class="list-group-item list-group-item-action">Vice Chancellor</a>
+                        <a href="registrar.html" class="list-group-item list-group-item-action">Registrar</a>
+                        <a href="courses.html" class="list-group-item list-group-item-action">Courses</a>
+                        <a href="ngi-institution.html" class="list-group-item list-group-item-action">ALL NGI Institution</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center mb-4">
+                                <div class="col-md-8">
+                                    <h2 class="h4 mb-2">Founder Chairman</h2>
+                                    <h3 class="h3 mb-0">Late Shri.P.K.Das</h3>
+                                </div>
+                                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                    <img src="img/5.png" alt="Shri.P.K.Das" class="profile-image img-fluid">
+                                </div>
+                            </div>
+                            
+                            <div class="profile-content fade-in">
+                                <div class="profile-description">
+                                    <p class="mb-4">Nehru Group of Institutions was established in 1968 in Kuniamuthur, Coimbatore, TamilNadu as a centre of educational excellence to nurture, guide and 'ignite the spirit of the young minds' in Tamil Nadu and Kerala.</p>
+                                    
+                                    <p class="mb-4">Late P. K. Das, our founder-chairman gave up his lucrative job in the Air Force and chose to pursue his dream of building a centre of educational excellence. With a vision to establish Nehru Group of Institutions, he embarked on the mission, encountering first-hand experience of the difficulties and the challenges that sprang up unawares. His demise in 2009, saw the mantle of responsibility fall on the very able shoulders of his sons, Managing Trustee, Adv. Dr. P. Krishna Das and CEO & Secretary, Dr. P. Krishna Kumar, who weathered the fiercest of storms and challenges, to build up the walls and to emerge as contenders in the now changing world of education. They have stood fast in their faith of seeing their father's vision fulfilled and get the institution a University status, without compromising on the ethics and principles.</p>
+                                    
+                                    <p class="mb-4">We have, in the past 54 years, successfully nurtured, groomed and placed approximately 1,00,000 plus students in the best of corporate, here and abroad. Our service is complete. We have branches raPK DASng from architecture to technology across Tamil Nadu and Kerala, our corporate office in Coimbatore, all delivering objective advice and maintaining a professional level of service to students and parents.</p>
+                                    
+                                    <p class="mb-4">PK DAS has risen above every storm and challenge and has stood tall even while going through the fiery furnace of tests. 2022 marks 54 years of this unstoppable VICTORY.</p>
+                                    <p class="signature">Sowing Future Minds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <script>
+    fetch("footer.html")
+     .then(response => response.text())
+     .then(data => {
+       document.getElementById("footer").innerHTML = data;
+       });
+    </script>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+</body>
+</html> 
