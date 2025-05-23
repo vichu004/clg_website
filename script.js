@@ -483,8 +483,8 @@ function openVideoModal() {
     const videoFrame = document.getElementById('campus360Video');
     const unmuteBtn = document.getElementById('unmuteBtn');
 
-    const vid_id='1ah3JgKGa7o';
-    videoFrame.src = `https://www.youtube.com/embed/${vid_id}?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0&playsinline=1&mute=1`;
+    const vid_id = '-V_T9_18fLo';
+    videoFrame.src = `https://www.youtube.com/embed/${vid_id}?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0&playsinline=1&mute=1`;    
 
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
