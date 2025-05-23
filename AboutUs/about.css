@@ -375,7 +375,6 @@ header {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     background: var(--gradient-blue);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
 }
@@ -385,7 +384,6 @@ header {
     font-size: 1.5rem;
     font-weight: 500;
     background: var(--gradient-orange);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
 }
