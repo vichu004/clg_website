@@ -102,6 +102,94 @@
   transform: translateY(-30%);
 }
 
+/* From Uiverse.io by gharsh11032000 */ 
+.content button {
+  position: relative;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #ffffff;
+  box-shadow: 0 0 0 2px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content button svg {
+  position: absolute;
+  width: 24px;
+  fill: #ffffff;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content button .arr-1 {
+  right: 16px;
+}
+
+.content button .arr-2 {
+  left: -25%;
+}
+
+.content button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #e67e22;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: white;
+  border-radius: 12px;
+}
+
+.content button:hover .arr-1 {
+  right: -25%;
+}
+
+.content button:hover .arr-2 {
+  left: 16px;
+}
+
+.content button:hover .text {
+  transform: translateX(12px);
+}
+
+.content button:hover svg {
+  fill: #ffffff;
+}
+
+.content button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #e67e22;
+}
+
+.content button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+
 .t1 {
   margin-bottom: -40px;
   font-size: 200px;
@@ -489,6 +577,75 @@
 }
 
 /* university glance style starts  */
+
+.glance-btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.infra-btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.infra-btn button {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+
+.glance-btn button{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.university-btn {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 60px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.university-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(255, 119, 0, 0.944);
+}
+
+.university-btn.active {
+  background-color: #e67e22;
+  box-shadow: 0 2px 5px rgba(211, 84, 0, 0.5);
+  transform: translateY(1px);
+}
+
+.ngi-btn {
+  background-color: #303F9F;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 60px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ngi-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(48, 63, 159, 0.5);
+}
+
+.ngi-btn.active {
+  background-color: #1A237E;
+  box-shadow: 0 2px 5px rgba(26, 35, 126, 0.5);
+  transform: translateY(1px);
+}
 
 
 .university-container {
@@ -3085,3 +3242,327 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   color: black;
 }
+
+/* university infrastructure style starts  */
+
+
+.infra-btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.infra-btn button {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.universityi-btn {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 60px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.universityi-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(255, 119, 0, 0.944);
+}
+
+.universityi-btn.active {
+  background-color: #d35400;
+  box-shadow: 0 2px 5px rgba(211, 84, 0, 0.5);
+  transform: translateY(1px);
+}
+
+.ngii-btn {
+  background-color: #303F9F;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 60px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ngii-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(48, 63, 159, 0.5);
+}
+
+.ngii-btn.active {
+  background-color: #1A237E;
+  box-shadow: 0 2px 5px rgba(26, 35, 126, 0.5);
+  transform: translateY(1px);
+}
+
+
+.universityi-container {
+  background-color: #e67e22;
+  /* Deep purple/blue background as seen in the image */
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 15px;
+  /* Added border radius to match image containers */
+  overflow: hidden;
+}
+
+.universityi-heading {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+/* On mobile, show the heading at the top */
+@media (max-width: 767px) {
+  .universityi-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* On desktop, also show the heading in the center */
+@media (min-width: 992px) {
+  .universityi-container .row:first-child {
+    display: none;
+    /* Hide the top heading on desktop */
+  }
+
+  .unii.col-lg-6.d-none.d-lg-block {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .unii.col-lg-6.d-none.d-lg-block:before {
+    content: "UNIVERSITY INFRASTRUCTURE";
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+}
+
+/* Specific style for 1024px width */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .unii.col-lg-6.d-none.d-lg-block:before {
+    font-size: 3rem;
+    /* Smaller font size for 1024px */
+  }
+
+}
+
+/* Tablet specific styles (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .universityi-heading {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Show the title at top on tablet */
+  .universityi-container .row:first-child {
+    display: block;
+  }
+
+  /* Hide the center title section on tablet */
+  .col-md-6.d-none.d-md-block {
+    display: none !important;
+  }
+
+  /* Make 2x2 grid for tablet */
+  .col-md-3 {
+    width: 50%;
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+
+.image-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 8px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.03);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Mobile specific styles to match the provided image */
+@media (max-width: 575px) {
+  .universityi-container {
+    padding: 15px;
+  }
+
+  /* Force column layout on mobile */
+  .col-6 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .image-container {
+    margin-bottom: 10px;
+  }
+
+  /* Hide the middle empty section in mobile view */
+  .col-12.col-md-6.d-none.d-md-block {
+    display: none !important;
+  }
+}
+
+/*university infrastructure style ends  */
+
+
+
+/* ngi infrastructure style starts  */
+
+
+.ngii-container {
+  background-color: #303F9F;
+  /* Deep purple/blue background as seen in the image */
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 15px;
+  /* Added border radius to match image containers */
+  overflow: hidden;
+}
+
+.ngii-heading {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+/* On mobile, show the heading at the top */
+@media (max-width: 767px) {
+  .ngii-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* On desktop, also show the heading in the center */
+@media (min-width: 992px) {
+  .ngii-container .row:first-child {
+    display: none;
+    /* Hide the top heading on desktop */
+  }
+
+  .ngii .col-lg-6.d-none.d-lg-block {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ngii.col-lg-6.d-none.d-lg-block:before {
+    content: "NGI INFRASTRUCTURE";
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+}
+
+/* Specific style for 1024px width */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ngii .col-lg-6.d-none.d-lg-block:before {
+    font-size: 3rem;
+    /* Smaller font size for 1024px */
+  }
+}
+
+/* Tablet specific styles (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .ngii-heading {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Show the title at top on tablet */
+  .ngii-container .row:first-child {
+    display: block;
+  }
+
+  /* Hide the center title section on tablet */
+  .col-md-6.d-none.d-md-block {
+    display: none !important;
+  }
+
+  /* Make 2x2 grid for tablet */
+  .col-md-3 {
+    width: 50%;
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+
+.image-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 8px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.03);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Mobile specific styles to match the provided image */
+@media (max-width: 575px) {
+  .ngii-container {
+    padding: 15px;
+  }
+
+  /* Force column layout on mobile */
+  .col-6 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .image-container {
+    margin-bottom: 10px;
+  }
+
+  /* Hide the middle empty section in mobile view */
+  .ngii .col-12.col-md-6.d-none.d-md-block {
+    display: none !important;
+  }
+}
+
+/* ngi infrastructure style ends  */
