@@ -298,140 +298,166 @@
     background-color: #f8f9fa;
 }
 
+
 .healthcare-card {
-    background: white;
-    border-radius: 0;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    margin-bottom: 30px;
-    height: 100%;
-    position: relative;
-    border-left: 5px solid #27ae60;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  height: 100%;
 }
 
 .healthcare-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(39, 174, 96, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(242, 128, 31, 0.2);
 }
 
 .healthcare-image {
-    height: 250px;
-    overflow: hidden;
-    position: relative;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
 }
 
 .healthcare-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(39, 174, 96, 0.2), rgba(46, 204, 113, 0.4));
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.healthcare-card:hover .healthcare-image::before {
-    opacity: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.8));
+  z-index: 1;
 }
 
 .healthcare-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .healthcare-info {
-    padding: 20px;
-    background: white;
+  padding: 30px;
+  background: white;
 }
 
 .healthcare-info h3 {
-    color: #27ae60;
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    font-weight: 700;
+  color: #2E308F;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .healthcare-info .title {
-    color: #555;
-    font-weight: 500;
-    margin-bottom: 10px;
-    font-style: italic;
+  color: #F2801F;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.instrument-badge {
+  background: linear-gradient(90deg, #2E308F, #F2801F);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 5px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.instrument-badge:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #F2801F, #2E308F);
+}
+
+.healthcare-achievements {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.achievement-item i {
+  color: #F2801F;
+  margin-right: 10px;
 }
 
 /* Footer */
 .footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 50px 0 20px;
+  background: #2E308F;
+  color: white;
+  padding: 60px 0 30px;
+}
+
+.footer-logo {
+  background-color: white;
+  border-radius: 10px;
+  height: 70px;
+  margin-bottom: 20px;
+
 }
 
 .footer h5 {
-    color: #2ecc71;
-    margin-bottom: 20px;
-    font-weight: 600;
+  color: #F2801F;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .footer-links {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-links a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #2ecc71;
+  color: white;
+  text-decoration: none;
+  line-height: 2;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    margin-top: 30px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-links a {
-    color: white;
-    font-size: 1.5rem;
-    margin-right: 15px;
-    transition: color 0.3s ease;
+  color: white;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #2ecc71;
+  color: #F2801F;
 }
 
 /* Back Button */
 .back-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #27ae60;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
-    transition: all 0.3s ease;
-    z-index: 1000;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(180deg, #2E308F, #F2801F);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(242, 128, 31, 0.3);
 }
 
 .back-button:hover {
-    background: #2ecc71;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #F2801F, #2E308F);
+  box-shadow: 0 8px 20px rgba(242, 128, 31, 0.4);
 }
 
 /* Responsive Styles */
