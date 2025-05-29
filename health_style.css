@@ -65,6 +65,13 @@
     filter: saturate(1.2);
 }
 
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
 .overlay-gradient {
     position: absolute;
     top: 0;
@@ -465,6 +472,18 @@
     .image-section {
         height: 70vh;
     }
+
+    .background-image {
+        height: 70vh;
+    }
+
+    .background-image img {
+        height: 70vh;
+    }
+
+    .overlay-gradient {
+        height: 70vh;
+    }
     
     .t1 {
         font-size: 50px;
@@ -481,7 +500,19 @@
 
 @media (max-width: 576px) {
     .image-section {
-        height: 60vh;
+        height: 70vh;
+    }
+
+    .background-image {
+        height: 70vh;
+    }
+
+    .background-image img {
+        height: 70vh;
+    }
+
+    .overlay-gradient {
+        height: 70vh;
     }
     
     .t1 {
