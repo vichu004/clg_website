@@ -1142,7 +1142,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up-right">
+          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up-right" onclick="openAchievementModal('sih')">
             <img src="img/SIH.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title inner_title_acheivements">Smart India Hackathon SIH 2024 <br>(NIET)</h5>
@@ -1150,7 +1150,7 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up">
+          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up" onclick="openAchievementModal('shooting')">
             <img src="img/shooting.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title inner_title_acheivements">State Level Open Shooting Competition<br>(NIET)</h5>
@@ -1158,7 +1158,7 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up">
+          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up" onclick="openAchievementModal('hackathon')">
             <img src="img/hackathon.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title inner_title_acheivements">Ideathon-RISE - UP 2.0<br>(JCET)<br><br></h5>
@@ -1166,7 +1166,7 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up">
+          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up" onclick="openAchievementModal('cycle')">
             <img src="img/cycle.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title inner_title_acheivements">Sustainable Eco-Friendly Initiative<br>(NASC)<br><br></h5>
@@ -1174,7 +1174,7 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up">
+          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up" onclick="openAchievementModal('tbi')">
             <img src="img/tbi.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title inner_title_acheivements">NGI TBI Hosts One-Day Innovation Boot Camp<br>(NGI TBI)<br><br></h5>
@@ -1182,7 +1182,7 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up">
+          <div class="card acheiments_card" style="width: 18rem;" data-aos="fade-up" onclick="openAchievementModal('genz')">
             <img src="img/Genz.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title inner_title_acheivements">Teaching Gen Z in a Digital World<br>(NAL)<br><br></h5>
@@ -1193,6 +1193,138 @@
     </div>
   </section>
 </center>
+
+<!-- Achievement Modals -->
+<div id="achievementModal" class="achievement-modal">
+  <div class="achievement-modal-content">
+    <span class="close-achievement-modal" style="cursor: pointer;">&times;</span>
+    <div id="achievementContent">
+      <!-- Content will be dynamically inserted here -->
+    </div>
+  </div>
+</div>
+
+<!-- Add this before the closing body tag -->
+<script>
+const achievementDetails = {
+  sih: {
+    title: "Smart India Hackathon SIH 2024",
+    institution: "NIET",
+    description: "Our team participated in the prestigious Smart India Hackathon 2024, showcasing innovative solutions to real-world problems. The team developed a groundbreaking project that addresses critical challenges in healthcare technology.",
+    achievements: [
+      "Secured top position in the regional round",
+      "Developed innovative healthcare solution",
+      "Received recognition from industry experts"
+    ],
+    date: "March 2024",
+    image: "img/SIH.png"
+  },
+  shooting: {
+    title: "State Level Open Shooting Competition",
+    institution: "NIET",
+    description: "Our students excelled in the State Level Open Shooting Competition, demonstrating exceptional skill and sportsmanship. The event saw participation from top shooting talents across the state.",
+    achievements: [
+      "Multiple medals in different categories",
+      "Outstanding performance in team events",
+      "Recognition for sports excellence"
+    ],
+    date: "February 2024",
+    image: "img/shooting.png"
+  },
+  hackathon: {
+    title: "Ideathon-RISE - UP 2.0",
+    institution: "JCET",
+    description: "Our students participated in the Ideathon-RISE competition, presenting innovative solutions for urban development and sustainability. The event focused on creating smart city solutions.",
+    achievements: [
+      "Won first prize in innovation category",
+      "Received incubation support",
+      "Project selected for implementation"
+    ],
+    date: "January 2024",
+    image: "img/hackathon.png"
+  },
+  cycle: {
+    title: "Sustainable Eco-Friendly Initiative",
+    institution: "NASC",
+    description: "Our college launched a comprehensive eco-friendly initiative promoting sustainable practices and environmental consciousness among students and staff.",
+    achievements: [
+      "Reduced carbon footprint by 40%",
+      "Implemented waste management system",
+      "Created awareness programs"
+    ],
+    date: "December 2023",
+    image: "img/cycle.png"
+  },
+  tbi: {
+    title: "NGI TBI Innovation Boot Camp",
+    institution: "NGI TBI",
+    description: "The Technology Business Incubator hosted a one-day innovation boot camp, bringing together entrepreneurs, mentors, and industry experts to foster innovation and entrepreneurship.",
+    achievements: [
+      "50+ startups participated",
+      "15 industry mentors engaged",
+      "5 innovative projects selected for funding"
+    ],
+    date: "November 2023",
+    image: "img/tbi.png"
+  },
+  genz: {
+    title: "Teaching Gen Z in a Digital World",
+    institution: "NAL",
+    description: "Our faculty developed and implemented innovative teaching methodologies specifically designed for Generation Z students, incorporating digital tools and modern learning approaches.",
+    achievements: [
+      "Improved student engagement by 60%",
+      "Developed new digital learning modules",
+      "Received national recognition"
+    ],
+    date: "October 2023",
+    image: "img/Genz.png"
+  }
+};
+
+function openAchievementModal(achievementId) {
+  const modal = document.getElementById('achievementModal');
+  const content = document.getElementById('achievementContent');
+  const achievement = achievementDetails[achievementId];
+  
+  content.innerHTML = `
+    <div class="achievement-header">
+      <img src="${achievement.image}" alt="${achievement.title}" class="achievement-image">
+      <div class="achievement-title-section">
+        <h2>${achievement.title}</h2>
+        <h4>${achievement.institution}</h4>
+        <p class="achievement-date">${achievement.date}</p>
+      </div>
+    </div>
+    <div class="achievement-description">
+      <p>${achievement.description}</p>
+    </div>
+    <div class="achievement-highlights">
+      <h3>Key Achievements:</h3>
+      <ul>
+        ${achievement.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+      </ul>
+    </div>
+  `;
+  
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // Prevent background scrolling
+}
+
+// Close modal when clicking the X
+document.querySelector('.close-achievement-modal').onclick = function() {
+  document.getElementById('achievementModal').style.display = "none";
+  document.body.style.overflow = "auto"; // Restore scrolling
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('achievementModal');
+  if (event.target == modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Restore scrolling
+  }
+}
+</script>
 
 <!-- acheivements section ends  -->
 
