@@ -22,6 +22,7 @@
 .nav-logo {
   height: 50px;
   margin-left: 20px;
+  filter: saturate(2);
 }
 
 .navbar ul {

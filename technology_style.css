@@ -22,6 +22,7 @@
 .nav-logo {
     height: 50px;
     margin-left: 20px;
+    filter: saturate(2);
 }
 
 .navbar ul {
@@ -59,17 +60,10 @@
     left: 0;
     width: 100%;
     height: 90vh;
-    background: url('img/technology_bg.jpg') center center;
+    background: url('img/niet.jpg') center center;
     background-size: cover;
     z-index: 1;
-    filter: saturate(1.2);
-}
-
-.background-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.8);
+    filter: saturate(2);
 }
 
 .overlay-gradient {
@@ -470,18 +464,6 @@
     .image-section {
         height: 70vh;
     }
-
-    .background-image {
-        height: 70vh;
-    }
-
-    .background-image img {
-        height: 70vh;
-    }
-
-    .overlay-gradient {
-        height: 70vh;
-    }
     
     .t1 {
         font-size: 50px;
@@ -498,19 +480,7 @@
 
 @media (max-width: 576px) {
     .image-section {
-        height: 70vh;
-    }
-
-    .background-image {
-        height: 70vh;
-    }
-
-    .background-image img {
-        height: 70vh;
-    }
-
-    .overlay-gradient {
-        height: 70vh;
+        height: 60vh;
     }
     
     .t1 {
