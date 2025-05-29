@@ -1116,3 +1116,28 @@ footer li {
   }
 }
 /* University Footer Styles end*/
+        .card {
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-text.truncate {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .modal-dialog {
+            max-width: 800px;
+        }
+        .modal-body img {
+            max-height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
