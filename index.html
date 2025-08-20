@@ -1648,14 +1648,48 @@
 <!-- Auto-generate captions under each institution image -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    const institutionUrls = {
+      'Nehru Institute of Engineering and Technology': 'https://nehrucolleges.org',
+      'Nehru Arts and Science College': 'https://nasccbe.ac.in',
+      'Nehru Institute of Technology': 'https://nehruinstitute.com',
+      'Nehru Institute of Information Technology & Management': 'https://niitm.org',
+      'Nehru College of Management': 'https://ncmbschool.com',
+      'Jawaharlal College of Engineering & Technology': 'https://jawaharlalcolleges.com',
+      'Nehru College of Architecture': 'https://www.thenehrucolleges.com',
+      'Nehru College of Nursing and Research Institute': 'https://ncnri.com/',
+      'Nehru College of Physiotherapy': 'https://nehruphysiotherapy.com/',
+      'Nehru International School': 'https://nehruinternationalschool.com/',
+      'Jawaharlal Aviation Institute': 'https://www.jainstitute.com/',
+      'Nehru Academy of Law': 'https://nal.net.in/',
+      'Nehru College of Pharmacy': 'https://ncp.net.in/',
+      'PK Das Institute of Medical Sciences': 'https://pkdims.org/',
+      'PKDAS College of Nursing': 'https://pkdascollegeofnursing.com/'
+    };
+
     document.querySelectorAll('.institution-item').forEach((item) => {
       // Skip if caption already exists
       if (item.querySelector('.institution-caption')) return;
+      
+      // Get the title from h3 or img alt
       const title = (item.querySelector('.overlay h3')?.textContent || item.querySelector('img')?.alt || 'Institution').trim();
+      
+      // Get the corresponding URL for this institution
+      const url = institutionUrls[title] || item.querySelector('.institution-link').href;
+      
+      // Create wrapper anchor tag
+      const wrapper = document.createElement('a');
+      wrapper.href = url;
+      wrapper.target = '_blank';
+      wrapper.className = 'institution-caption-link';
+      
+      // Create caption div
       const cap = document.createElement('div');
       cap.className = 'institution-caption';
       cap.textContent = title;
-      item.appendChild(cap);
+      
+      // Add caption to wrapper and wrapper to item
+      wrapper.appendChild(cap);
+      item.appendChild(wrapper);
     });
   });
 </script>

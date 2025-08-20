@@ -2998,7 +2998,7 @@ body {
 }
 
 .institution-item img {
-  width: 250px;
+  width: 270px;
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
@@ -3081,9 +3081,24 @@ body {
   .institution-caption { width: 210px; font-size: 0.85rem; }
 }
 
-.institution-caption:hover {
-  color: #e67e22; /* Change text color on hover */
-  background-color: #f0f0f0; /* Slightly darker background on hover */
+.institution-caption-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.institution-caption-link:hover {
+    color: #4b2882;
+    background-color: rgba(75, 40, 130, 0.1);
+}
+
+.institution-caption {
+    font-weight: 500;
+    font-size: 0.9em;
 }
 
 @keyframes scroll {
