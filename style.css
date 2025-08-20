@@ -3783,3 +3783,136 @@ body {
   .stat-number { font-size: 28px; }
   .stat-icon { font-size: 32px; }
 }
+
+
+/* school of technology starts  */
+
+.sot-container {
+  background-color: #e67e22;
+  /* Deep purple/blue background as seen in the image */
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 15px;
+  /* Added border radius to match image containers */
+  overflow: hidden;
+}
+
+.sot-heading {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+/* On mobile, show the heading at the top */
+@media (max-width: 767px) {
+  .sot-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* On desktop, also show the heading in the center */
+@media (min-width: 992px) {
+  .sot-container .row:first-child {
+    display: none;
+    /* Hide the top heading on desktop */
+  }
+
+  .sot.col-lg-6.d-none.d-lg-block {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sot.col-lg-6.d-none.d-lg-block:before {
+    content: "SCHOOL OF TECHNOLOGY";
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+}
+
+/* Specific style for 1024px width */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .sot.col-lg-6.d-none.d-lg-block:before {
+    font-size: 3rem;
+    /* Smaller font size for 1024px */
+  }
+
+}
+
+/* Tablet specific styles (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .sot-heading {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Show the title at top on tablet */
+  .sot-container .row:first-child {
+    display: block;
+  }
+
+  /* Hide the center title section on tablet */
+  .col-md-6.d-none.d-md-block {
+    display: none !important;
+  }
+
+  /* Make 2x2 grid for tablet */
+  .col-md-3 {
+    width: 50%;
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+
+.sot-image-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 8px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.sot-image-container:hover {
+  transform: scale(1.03);
+}
+
+.sot-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Mobile specific styles to match the provided image */
+@media (max-width: 575px) {
+  .sot-container {
+    padding: 15px;
+  }
+
+  /* Force column layout on mobile */
+  .col-6 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .sot-image-container {
+    margin-bottom: 10px;
+  }
+
+  /* Hide the middle empty section in mobile view */
+  .col-12.col-md-6.d-none.d-md-block {
+    display: none !important;
+  }
+}
+
+/* school of technology ends  */
