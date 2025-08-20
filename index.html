@@ -1645,7 +1645,20 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
-
+<!-- Auto-generate captions under each institution image -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.institution-item').forEach((item) => {
+      // Skip if caption already exists
+      if (item.querySelector('.institution-caption')) return;
+      const title = (item.querySelector('.overlay h3')?.textContent || item.querySelector('img')?.alt || 'Institution').trim();
+      const cap = document.createElement('div');
+      cap.className = 'institution-caption';
+      cap.textContent = title;
+      item.appendChild(cap);
+    });
+  });
+</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
