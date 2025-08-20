@@ -16,23 +16,26 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(number);
     });
 
-    // Function to animate counting
+    // Function to animate counting (time-based, smooth, with suffix)
     function animateValue(obj) {
-        const text = obj.textContent;
-        let value = parseInt(text.replace(/[^\d]/g, ''));
+        const text = obj.textContent.trim();
+        const value = parseInt(text.replace(/[^\d]/g, ''), 10) || 0;
         const suffix = text.replace(/[0-9]/g, '');
-        let startValue = 0;
-        const duration = 2000;
-        const increment = Math.floor(duration / value);
+        let current = 0;
+        const duration = 1500; // ms
+        const frameTime = 16; // ~60fps
+        const steps = Math.max(1, Math.round(duration / frameTime));
+        const increment = Math.max(1, Math.round(value / steps));
 
-        let counter = setInterval(function () {
-            startValue += 1;
-            obj.textContent = startValue + suffix;
-            if (startValue >= value) {
-                clearInterval(counter);
+        const timer = setInterval(function () {
+            current += increment;
+            if (current >= value) {
+                clearInterval(timer);
                 obj.textContent = text; // Ensure final text is exactly as specified
+            } else {
+                obj.textContent = current + suffix;
             }
-        }, increment);
+        }, frameTime);
     }
 });
 document.addEventListener('DOMContentLoaded', function () {

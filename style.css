@@ -3725,3 +3725,17 @@ body {
     font-size: 18px;
   }
 }
+
+/* Stats / Counters */
+.stats-section { padding: 50px 15px; }
+.stat-card {
+  background: #ffffff; border-radius: 12px; padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.stat-icon { font-size: 40px; color: #2E308F; margin-bottom: 10px; }
+.stat-number { font-size: 36px; font-weight: 800; color: #2E308F; }
+.stat-label { font-size: 16px; font-weight: 600; color: #555; }
+@media (max-width: 575px) {
+  .stat-number { font-size: 28px; }
+  .stat-icon { font-size: 32px; }
+}
