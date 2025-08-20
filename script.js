@@ -59,8 +59,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initially hide all founder details except the first one
     hideAllFounderDetails();
-    document.getElementById('persons1').style.display = 'flex';
+    const firstDetail = document.getElementById('persons1');
+    firstDetail.style.display = 'flex';
+    firstDetail.style.opacity = '1';
+    firstDetail.style.transform = 'translateY(0)';
     personDivs[0].classList.add('active');
+    
+    // Add a small delay to ensure smooth initial display
+    setTimeout(() => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }, 100);
 
     // Add click event listeners to each person div
     personDivs.forEach(person => {
@@ -89,17 +103,26 @@ document.addEventListener('DOMContentLoaded', function () {
             const detailElement = document.getElementById(detailId);
             if (detailElement) {
                 detailElement.style.display = 'flex';
+                
+                // Add a small delay for smooth transition effect
+                setTimeout(() => {
+                    detailElement.style.opacity = '1';
+                    detailElement.style.transform = 'translateY(0)';
+                }, 50);
 
-                // Smooth scroll to the founder details
-                detailElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                // Smooth scroll to the top of the About Us section
+                const aboutSection = document.getElementById('about');
+                if (aboutSection) {
+                    aboutSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
+            
         });
     });
 });
-
 
 // placement section code starts 
 document.addEventListener('DOMContentLoaded', function () {
