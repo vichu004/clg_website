@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PK DAS UNIVERSITY | TIMELINE</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      background: #031625;
+      overflow: hidden;
+    }
+
+    #timeline-container {
+      position: relative;
+      height: 100vh;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      perspective: 1500px; /* 3D effect */
+    }
+    #timeline-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    #timeline {
+      display: flex;
+      height: 100%;
+      width: max-content;
+      padding: 0 50vw;
+    }
+
+    .tl-item {
+      position: relative;
+      flex: 0 0 auto;
+      height: 100%;
+      color: #fff;
+      background: #05263f;
+      overflow: hidden;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 220px auto auto;
+      align-content: start;
+      justify-items: center;
+      padding-top: 15vh;
+      transform: scale(0.9);
+      filter: grayscale(80%);
+      opacity: 0.7;
+      transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+      width: 50vw;        /* Default: 2 items on small screens */
+      min-width: 50vw;
+    }
+
+    .tl-item.is-active {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+      opacity: 1;
+      background: #083458;
+      transition: filter 0.5s ease, opacity 0.5s ease, transform 0.2s linear;
+    }
+    
+    /* Tablet and up → lock to 4 items */
+    @media (min-width: 768px) {
+      .tl-item { width: 25vw; min-width: 25vw; }
+    }
+
+    /* Removed the 20vw (5 items) rule */
+
+    .tl-img-wrapper, .tl-year, .tl-content {
+      transition: opacity 0.5s ease;
+    }
+
+    .tl-content {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .tl-img-wrapper {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border: 3px solid gold;
+      border-radius: 15px;
+    }
+
+    .tl-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tl-year {
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      padding: 0.5em 1em;
+      margin-bottom: 15px;
+      background-color: #031625;
+    }
+
+    .tl-content h4 {
+      display: block;
+      max-width: 100%;
+      white-space: normal;
+      overflow-wrap: break-word;
+      font-size: 1.1rem;
+      color: #1779cf;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .tl-content p {
+      font-size: 1rem;
+      color: #eee;
+    }
+
+    #scrubber-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: rgba(3, 22, 37, 0.8);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        padding: 0 20px;
+    }
+    
+    #play-pause-btn {
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: 2px solid gold;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #play-pause-btn svg {
+        width: 20px;
+        height: 20px;
+        fill: gold;
+    }
+
+    #scrubber-track {
+        width: 100%;
+        height: 4px;
+        background-color: #05263f;
+        position: relative;
+        border-radius: 2px;
+    }
+
+    #scrubber-progress {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0%;
+        background-color: gold;
+        border-radius: 2px;
+    }
+
+    #scrubber-handle {
+        position: absolute;
+        left: 0%;
+        top: 50%;
+        width: 16px;
+        height: 16px;
+        background-color: gold;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        cursor: grab;
+    }
+     #scrubber-handle:active {
+        cursor: grabbing;
+        transform: translate(-50%, -50%) scale(1.2);
+     }
+
+    .year-marker {
+        position: absolute;
+        top: -25px;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 12px;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+    }
+    .year-marker:hover {
+        opacity: 1;
+        color: gold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+
+  <div id="timeline-container">
+    <section id="timeline">
+      <!-- All your .tl-item divs with local image paths -->
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/nehru college of aeronautics.png" class="tl-img" alt="Event Image"></div>
+            <div class="tl-year"><p>1960</p></div>
+            <div class="tl-content">
+              <h4>Nehru College of Aeronautics</h4>
+              <p>Tamilnadu</p>
+            </div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="img/ncm.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>1997</p></div>
+            <div class="tl-content"><h4>Nehru College of Management</h4><p>Tamilnadu</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="img/nasc.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>1998</p></div>
+            <div class="tl-content"><h4>Nehru Arts & Science College</h4><p>Tamilnadu</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/Nehru College of Engineering & Research Centre.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2002</p></div>
+            <div class="tl-content"><h4>Nehru College of Engineering</h4><p>Kerala</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/nehru college of pharmacy.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2003</p></div>
+            <div class="tl-content"><h4>Nehru College of Pharmacy</h4><p>Kerala</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/niet.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2006</p></div>
+            <div class="tl-content"><h4>Nehru Institute of Engineering and Technology</h4><p>Tamilnadu</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/niitm.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2006</p></div>
+            <div class="tl-content"><h4>Nehru Institute of Information Technology & Management</h4><p>Tamilnadu</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/pkdas college nursing.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2006</p></div>
+            <div class="tl-content"><h4>P K Das College of Nursing</h4><p>Kerala</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/nit.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2008</p></div>
+            <div class="tl-content"><h4>Nehru Institute of Technology</h4><p>Tamilnadu</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/Jawaharlal Aviation Institute.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2010</p></div>
+            <div class="tl-content"><h4>Jawaharlal Aviation Institute</h4><p>Kerala</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/Jawaharlal College of Engineering & Technology.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2012</p></div>
+            <div class="tl-content"><h4>Jawaharlal College of Engineering and Technology</h4><p>Kerala</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/PK Das Institute of Medical Sciences.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2014</p></div>
+            <div class="tl-content"><h4>P.K. Das Institute of Medical Sciences</h4><p>Kerala</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/Nehru Academy of Law.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2015</p></div>
+            <div class="tl-content"><h4>Nehru Academy of Law</h4><p>Kerala</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/Nehru College of Architecture.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2015</p></div>
+            <div class="tl-content"><h4>Nehru School of Architecture</h4><p>Kerala</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/nehru-international-school-in-coimbatore.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2020</p></div>
+            <div class="tl-content"><h4>Nehru International School</h4><p>Tamilnadu</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-img-wrapper"><img src="./img/nehru college of physiotherapy.jpg" class="tl-img"></div>
+            <div class="tl-year"><p>2022</p></div>
+            <div class="tl-content"><h4>Nehru College of Physiotherapy</h4><p>Tamilnadu</p></div>
+        </div>
+    </section>
+  </div>
+
+  <div id="scrubber-container">
+      <button id="play-pause-btn"></button>
+      <div id="scrubber-track">
+          <div id="scrubber-progress"></div>
+          <div id="scrubber-handle"></div>
+      </div>
+  </div>
+
+  <script>
+    const container = document.getElementById('timeline-container');
+    const items = document.querySelectorAll('.tl-item');
+    const audio = document.querySelector('audio');
+    
+    const scrubberTrack = document.getElementById('scrubber-track');
+    const scrubberProgress = document.getElementById('scrubber-progress');
+    const scrubberHandle = document.getElementById('scrubber-handle');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+
+    const playIcon = `<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>`;
+    const pauseIcon = `<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>`;
+
+    let activeItem = null;
+    let isAutoScrolling = true;
+    let currentItemIndex = 0;
+
+    function updateSpotlight() {
+        const containerCenter = container.getBoundingClientRect().left + container.offsetWidth / 2;
+        let closestItem = null;
+        let minDistance = Infinity;
+        items.forEach(item => {
+            const itemCenter = item.getBoundingClientRect().left + item.offsetWidth / 2;
+            const distance = Math.abs(containerCenter - itemCenter);
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestItem = item;
+            }
+        });
+        if (closestItem && closestItem !== activeItem) {
+            if(activeItem) activeItem.classList.remove('is-active');
+            closestItem.classList.add('is-active');
+            activeItem = closestItem;
+        }
+    }
+
+    function initializeScrubber() {
+        scrubberTrack.innerHTML = `<div id="scrubber-progress"></div><div id="scrubber-handle"></div>`;
+        items.forEach((item, index) => {
+            const year = item.querySelector('.tl-year p').textContent;
+            const marker = document.createElement('span');
+            marker.className = 'year-marker';
+            marker.textContent = year;
+            const percentPosition = (index / (items.length - 1)) * 100;
+            marker.style.left = `${percentPosition}%`;
+            marker.addEventListener('click', () => {
+                isAutoScrolling = false;
+                updatePlayPauseBtn();
+                scrollToItem(index);
+            });
+            scrubberTrack.appendChild(marker);
+        });
+    }
+
+    function updateScrubber() {
+        const scrollPercent = container.scrollLeft / (container.scrollWidth - container.clientWidth);
+        const progressPercent = scrollPercent * 100;
+        document.getElementById('scrubber-progress').style.width = `${progressPercent}%`;
+        document.getElementById('scrubber-handle').style.left = `${progressPercent}%`;
+    }
+    
+    function scrollToItem(index) {
+        const item = items[index];
+        if (!item) return;
+        const targetScroll = item.offsetLeft - container.offsetWidth / 2 + item.offsetWidth / 2;
+        container.scrollTo({ left: targetScroll, behavior: 'smooth' });
+        currentItemIndex = index;
+    }
+
+    function updatePlayPauseBtn() {
+        playPauseBtn.innerHTML = isAutoScrolling ? pauseIcon : playIcon;
+    }
+
+    async function autoScrollLoop() {
+        while(true) {
+            if (isAutoScrolling) {
+                currentItemIndex = (currentItemIndex + 1) % items.length;
+                scrollToItem(currentItemIndex);
+            }
+            await new Promise(res => setTimeout(res, 3000));
+        }
+    }
+
+    let isDragging = false;
+    scrubberHandle.addEventListener('mousedown', () => {
+        isDragging = true;
+        isAutoScrolling = false;
+        updatePlayPauseBtn();
+    });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const trackRect = scrubberTrack.getBoundingClientRect();
+        const newX = e.clientX - trackRect.left;
+        let percent = newX / trackRect.width;
+        percent = Math.max(0, Math.min(1, percent));
+        const targetScroll = percent * (container.scrollWidth - container.clientWidth);
+        container.scrollLeft = targetScroll;
+    });
+
+    playPauseBtn.addEventListener('click', () => {
+        isAutoScrolling = !isAutoScrolling;
+        updatePlayPauseBtn();
+    });
+
+    container.addEventListener('scroll', () => {
+        updateSpotlight();
+        updateScrubber();
+    });
+
+    items.forEach(item => {
+        item.addEventListener('mousemove', (e) => {
+            if (item.classList.contains('is-active')) {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateY = (x / rect.width) * 20;
+                const rotateX = (y / rect.height) * -20;
+                item.style.transform = `scale(1.05) perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            }
+        });
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = '';
+        });
+    });
+
+    window.onload = () => {
+        scrollToItem(0);
+        initializeScrubber();
+        updateSpotlight();
+        updateScrubber();
+        updatePlayPauseBtn();
+        autoScrollLoop();
+    };
+    
+    document.body.addEventListener('click', function playMusicOnClick() {
+      if (audio.paused) audio.play();
+    }, { once: true });
+
+  </script>
+
+</body>
+</html>
