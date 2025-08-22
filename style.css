@@ -3784,6 +3784,105 @@ body {
   .stat-icon { font-size: 32px; }
 }
 
+/* Animated Button Styles */
+.animated-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #2d318c, #3f51b5);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 49, 140, 0.2);
+}
+
+.animated-button .button-text {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.animated-button .button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  margin-left: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.animated-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #3f51b5, #2d318c);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+/* Hover Effects */
+.animated-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(45, 49, 140, 0.3);
+  color: white;
+}
+
+.animated-button:hover::before {
+  left: 0;
+}
+
+.animated-button:hover .button-text {
+  transform: translateX(-8px);
+}
+
+.animated-button:hover .button-icon {
+  width: 24px;
+  margin-left: 8px;
+}
+
+/* Active State */
+.animated-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(45, 49, 140, 0.2);
+}
+
+/* Animation for Icon */
+@keyframes arrowMove {
+  0% {
+      transform: translateX(-5px);
+      opacity: 0;
+  }
+  50% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(5px);
+      opacity: 0;
+  }
+}
+
+.animated-button:hover .button-icon i {
+  animation: arrowMove 1s infinite;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .animated-button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
+}
 
 /* school of technology starts  */
 
