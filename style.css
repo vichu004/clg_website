@@ -73,6 +73,182 @@
   }
 }
 
+/* Navbar Dropdown Styles */
+.navbar {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 0;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(149, 149, 149, 0.715);
+    backdrop-filter: blur(50%);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 0.8rem 0;
+    min-width: 230px;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-item.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar .dropdown-item {
+    padding: 0.7rem 1.5rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: bolder;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.811);
+    color: #e67e22;
+    padding-left: 2rem;
+}
+
+.navbar .dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background-color: #e67e22;
+    transition: all 0.3s ease;
+}
+
+.navbar .dropdown-item:hover::before {
+    height: 100%;
+}
+
+.navbar .dropdown-divider {
+    margin: 0.5rem 0;
+    border-color: rgba(45, 49, 140, 0.1);
+}
+
+/* Dropdown Toggle Arrow */
+.navbar .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.navbar .nav-item.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(-180deg);
+}
+
+
+/* Animation */
+@keyframes dropdownAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 991px) {
+    .navbar .dropdown-menu {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    .navbar .dropdown-item {
+        color: #ffffff;
+        padding: 0.8rem 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
+
+    .navbar .dropdown-item::before {
+        display: none;
+    }
+
+    .navbar .dropdown-divider {
+        border-color: rgba(255, 255, 255, 0.1);
+        margin: 0;
+    }
+
+    .navbar .nav-item.dropdown .dropdown-toggle::after {
+        float: right;
+        margin-top: 8px;
+    }
+
+    .navbar .dropdown-menu {
+        display: none;
+        transform: none;
+    }
+
+    .navbar .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+    }
+}
+
+/* Animation for mobile dropdown */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional hover effects for desktop */
+@media (min-width: 992px) {
+    .navbar .dropdown-item:hover {
+        transform: translateX(5px);
+    }
+
+    .navbar .nav-item.dropdown:hover .dropdown-menu {
+        animation: dropdownAnimation 0.3s ease forwards;
+    }
+
+    .navbar .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 20px;
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.95);
+        transform: rotate(45deg);
+        z-index: -1;
+    }
+}
 .video-section {
   position: relative;
   height: 95vh;
