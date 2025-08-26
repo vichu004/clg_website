@@ -4218,137 +4218,176 @@ body {
 /* Add this to your style.css file */
 .tech-details-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding: 2rem;
-  background: #FFFFFF;
-  margin: 0rem auto;
-  max-width: 1500px;
-  position: relative;
-  
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  perspective: 1000px;
 }
 
 .tech-detail-box {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  border: 3px solid rgb(230, 126, 34);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 2.5rem;
   position: relative;
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform-style: preserve-3d;
+}
+
+.tech-detail-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateY(100%) rotate(45deg);
+  transition: transform 0.6s ease;
 }
 
 .tech-detail-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tech-detail-box:hover::before {
+  transform: translateY(0) rotate(45deg);
 }
 
 .tech-detail-box h3 {
-  color: #1a237e;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  text-align: left;
-  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
   position: relative;
-  padding-left: 1rem;
+  padding-bottom: 0.75rem;
 }
 
-.tech-detail-box h3::before {
+.tech-detail-box h3::after {
   content: '';
   position: absolute;
+  bottom: 0;
   left: 0;
-  top: 0;
-  height: 100%;
-  width: 4px;
-  background: #4285f4;
-  border-radius: 2px;
+  width: 60px;
+  height: 3px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.tech-detail-box:hover h3::after {
+  width: 100px;
 }
 
 .tech-detail-box p {
-  color: #000000;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: #4a4a4a;
+  line-height: 1.7;
+  font-size: 1.1rem;
   margin: 0;
-  padding: 0;
-  text-align: justify;
-  font-weight: 470;
+  transform: translateZ(20px);
 }
 
-/* Technology-specific accent colors */
-.tech-detail-box[data-tech="quantum"] h3::before { background: #4285f4; }
-.tech-detail-box[data-tech="robotics"] h3::before { background: #34a853; }
-.tech-detail-box[data-tech="augmented"] h3::before { background: #fbbc05; }
-.tech-detail-box[data-tech="artificial"] h3::before { background: #ea4335; }
-.tech-detail-box[data-tech="biotechnology"] h3::before { background: #0f9d58; }
-.tech-detail-box[data-tech="iot"] h3::before { background: #4285f4; }
-
-/* Hover effects */
-.tech-detail-box:hover p {
-  color: #000;
+/* Technology-specific styling */
+.tech-detail-box[data-tech="quantum"] {
+  background: linear-gradient(135deg, #f6f8fd, #ffffff);
+  border-left: 5px solid #4285f4;
 }
 
+.tech-detail-box[data-tech="robotics"] {
+  background: linear-gradient(135deg, #fff6f6, #ffffff);
+  border-left: 5px solid #ea4335;
+}
+
+.tech-detail-box[data-tech="augmented"] {
+  background: linear-gradient(135deg, #f3fff3, #ffffff);
+  border-left: 5px solid #34a853;
+}
+
+.tech-detail-box[data-tech="artificial"] {
+  background: linear-gradient(135deg, #fffdf3, #ffffff);
+  border-left: 5px solid #fbbc05;
+}
+
+.tech-detail-box[data-tech="biotechnology"] {
+  background: linear-gradient(135deg, #f8f3ff, #ffffff);
+  border-left: 5px solid #9c27b0;
+}
+
+.tech-detail-box[data-tech="iot"] {
+  background: linear-gradient(135deg, #fff3f6, #ffffff);
+  border-left: 5px solid #ff4081;
+}
+
+/* Add icon indicators */
 .tech-detail-box::after {
+  font-family: 'Font Awesome 5 Free';
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  transition: all 0.3s ease;
+}
+
+.tech-detail-box[data-tech="quantum"]::after { content: '\f121'; }   /* Code icon */
+.tech-detail-box[data-tech="robotics"]::after { content: '\f544'; }  /* Robot icon */
+.tech-detail-box[data-tech="augmented"]::after { content: '\f827'; } /* VR icon */
+.tech-detail-box[data-tech="artificial"]::after { content: '\f544'; } /* Brain icon */
+.tech-detail-box[data-tech="biotechnology"]::after { content: '\f486'; } /* DNA icon */
+.tech-detail-box[data-tech="iot"]::after { content: '\f1eb'; }      /* WiFi icon */
+
+.tech-detail-box:hover::after {
+  opacity: 0.3;
+  transform: scale(1.2);
+}
+
+/* Add animated underline effect */
+.tech-detail-box::before {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
-.tech-detail-box:hover::after {
-  opacity: 1;
+.tech-detail-box:hover::before {
+  transform: scaleX(1);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .tech-details-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1.5rem;
-  }
+/* Add subtle hover animation */
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0) rotateX(5deg); }
+  50% { transform: translateY(-15px) rotateX(10deg); }
 }
 
+.tech-detail-box:hover {
+  animation: cardFloat 3s ease infinite;
+}
+
+/* Add responsive adjustments */
 @media (max-width: 768px) {
   .tech-details-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .tech-detail-box {
-    padding: 1.25rem;
-  }
-  
-  .tech-detail-box h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .tech-detail-box p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-}
-
-@media (max-width: 576px) {
-  .tech-details-grid {
     grid-template-columns: 1fr;
+    padding: 1.5rem;
   }
   
   .tech-detail-box {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   
   .tech-detail-box h3 {
-    font-size: 1rem;
-  }
-  
-  .tech-detail-box p {
-    font-size: 0.85rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -4483,140 +4522,271 @@ body {
 }
 
 /* school of health science ends  */
-
-/* Add this to your style.css file */
 .hs-details-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding: 2rem;
-  background: #FFFFFF;
-  margin: 0rem auto;
-  max-width: 1500px;
-  position: relative;
-  
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  perspective: 1000px;
 }
 
 .hs-detail-box {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  border: 3px solid rgb(230, 126, 34);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 2.5rem;
   position: relative;
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform-style: preserve-3d;
+}
+
+.hs-detail-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateY(100%) rotate(45deg);
+  transition: transform 0.6s ease;
 }
 
 .hs-detail-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hs-detail-box:hover::before {
+  transform: translateY(0) rotate(45deg);
 }
 
 .hs-detail-box h3 {
-  color: #1a237e;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  text-align: left;
-  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
   position: relative;
-  padding-left: 1rem;
+  padding-bottom: 0.75rem;
 }
 
-.hs-detail-box h3::before {
+.hs-detail-box h3::after {
   content: '';
   position: absolute;
+  bottom: 0;
   left: 0;
-  top: 0;
-  height: 100%;
-  width: 4px;
-  background: #4285f4;
-  border-radius: 2px;
+  width: 60px;
+  height: 3px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.hs-detail-box:hover h3::after {
+  width: 100px;
 }
 
 .hs-detail-box p {
-  color: #000000;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: #4a4a4a;
+  line-height: 1.7;
+  font-size: 1.1rem;
   margin: 0;
-  padding: 0;
-  text-align: justify;
-  font-weight: 470;
+  transform: translateZ(20px);
 }
 
-/* Technology-specific accent colors */
-.hs-detail-box[data-tech="quantum"] h3::before { background: #4285f4; }
-.hs-detail-box[data-tech="robotics"] h3::before { background: #34a853; }
-.hs-detail-box[data-tech="augmented"] h3::before { background: #fbbc05; }
-.hs-detail-box[data-tech="artificial"] h3::before { background: #ea4335; }
-.hs-detail-box[data-tech="biotechnology"] h3::before { background: #0f9d58; }
-.hs-detail-box[data-tech="iot"] h3::before { background: #4285f4; }
-
-/* Hover effects */
-.hs-detail-box:hover p {
-  color: #000;
+/* Department-specific styling */
+.hs-detail-box[data-tech="Orthopaedic"] {
+  background: linear-gradient(135deg, #fff6f6, #ffffff);
+  border-left: 5px solid #e74c3c;
 }
 
+.hs-detail-box[data-tech="Ophthalmology"] {
+  background: linear-gradient(135deg, #f6f8fd, #ffffff);
+  border-left: 5px solid #3498db;
+}
+
+.hs-detail-box[data-tech="infusion pump"] {
+  background: linear-gradient(135deg, #f3fff3, #ffffff);
+  border-left: 5px solid #2ecc71;
+}
+
+.hs-detail-box[data-tech="Exoskeletons"] {
+  background: linear-gradient(135deg, #fff3f6, #ffffff);
+  border-left: 5px solid #e056fd;
+}
+
+.hs-detail-box[data-tech="MRI"] {
+  background: linear-gradient(135deg, #f8f3ff, #ffffff);
+  border-left: 5px solid #9b59b6;
+}
+
+.hs-detail-box[data-tech="Dialysis Machine"] {
+  background: linear-gradient(135deg, #fffdf3, #ffffff);
+  border-left: 5px solid #f1c40f;
+}
+
+/* Add medical icons */
 .hs-detail-box::after {
+  font-family: 'Font Awesome 5 Free';
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  transition: all 0.3s ease;
+}
+
+.hs-detail-box[data-tech="Orthopaedic"]::after { content: '\f5cb'; }     /* Bone icon */
+.hs-detail-box[data-tech="Ophthalmology"]::after { content: '\f06e'; }   /* Eye icon */
+.hs-detail-box[data-tech="infusion pump"]::after { content: '\f48e'; }   /* Medical drip icon */
+.hs-detail-box[data-tech="Exoskeletons"]::after { content: '\f21e'; }    /* Person icon */
+.hs-detail-box[data-tech="MRI"]::after { content: '\f0f7'; }            /* Hospital icon */
+.hs-detail-box[data-tech="Dialysis Machine"]::after { content: '\f469'; } /* Medical device icon */
+
+.hs-detail-box:hover::after {
+  opacity: 0.3;
+  transform: scale(1.2);
+}
+
+/* Add hover effects */
+@keyframes cardPulse {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.02); }
+}
+
+.hs-detail-box:hover {
+  animation: cardPulse 2s ease infinite;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+  .hs-details-grid {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+  
+  .hs-detail-box {
+    padding: 1.5rem;
+  }
+  
+  .hs-detail-box h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Add interactive elements */
+.hs-detail-box::before {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
-.hs-detail-box:hover::after {
+.hs-detail-box:hover::before {
+  transform: scaleX(1);
+}
+
+/* Remove this duplicate section */
+/* Unified card animations */
+.tech-detail-box,
+.hs-detail-box {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+/* Hover state */
+.tech-detail-box:hover,
+.hs-detail-box:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Click animation */
+.tech-detail-box.clicked,
+.hs-detail-box.clicked {
+  animation: clickPulse 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transform: scale(0);
+  animation: rippleEffect 0.6s linear;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes clickPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Fade in animation */
+.tech-detail-box.visible,
+.hs-detail-box.visible {
   opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .hs-details-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1.5rem;
-  }
+/* Card content animations */
+.tech-detail-box h3,
+.hs-detail-box h3 {
+  transition: transform 0.3s ease;
 }
 
+.tech-detail-box:hover h3,
+.hs-detail-box:hover h3 {
+  transform: translateZ(30px);
+}
+
+.tech-detail-box p,
+.hs-detail-box p {
+  transition: transform 0.3s ease;
+}
+
+.tech-detail-box:hover p,
+.hs-detail-box:hover p {
+  transform: translateZ(20px);
+}
+
+/* Media queries for responsive animations */
 @media (max-width: 768px) {
-  .hs-details-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1rem;
-  }
-
+  .tech-detail-box,
   .hs-detail-box {
-    padding: 1.25rem;
+    transform: none !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .hs-detail-box h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .hs-detail-box p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-}
-
-@media (max-width: 576px) {
-  .hs-details-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .hs-detail-box {
-    padding: 1rem;
-  }
-  
-  .hs-detail-box h3 {
-    font-size: 1rem;
-  }
-  
-  .hs-detail-box p {
-    font-size: 0.85rem;
+  .tech-detail-box:hover,
+  .hs-detail-box:hover {
+    transform: translateY(-5px) !important;
   }
 }

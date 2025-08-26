@@ -514,3 +514,95 @@ function closeVideoModal() {
     // Hide unmute button on close
     unmuteBtn.style.display = 'none';
 }
+
+// Unified animation function for both tech and health science cards
+function initializeCards(selector) {
+  const cards = document.querySelectorAll(selector);
+  
+  cards.forEach(card => {
+    // Add 3D tilt effect
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 25;
+      const rotateY = (centerX - x) / 25;
+      const scale = 1.05;
+      
+      card.style.transform = `
+        perspective(1000px) 
+        rotateX(${rotateX}deg) 
+        rotateY(${rotateY}deg) 
+        scale(${scale})
+      `;
+      
+      // Add highlight effect
+      const shine = `radial-gradient(
+        circle at ${x}px ${y}px,
+        rgba(255,255,255,0.2) 0%,
+        rgba(255,255,255,0.1) 20%,
+        rgba(255,255,255,0) 50%
+      )`;
+      
+      card.style.backgroundImage = shine;
+    });
+    
+    // Reset transform and remove highlight on mouse leave
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+      card.style.backgroundImage = 'none';
+      
+      // Add smooth return animation
+      card.style.transition = 'all 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+      setTimeout(() => {
+        card.style.transition = ''; // Remove transition after animation
+      }, 500);
+    });
+    
+    // Add click effect
+    card.addEventListener('click', () => {
+      card.classList.add('clicked');
+      
+      // Add ripple effect
+      const ripple = document.createElement('div');
+      ripple.classList.add('ripple');
+      card.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+        card.classList.remove('clicked');
+      }, 600);
+    });
+  });
+  
+  // Add intersection observer for fade-in effect
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.style.transform = 'translateY(0) scale(1)';
+        entry.target.style.opacity = '1';
+      }
+    });
+  }, { 
+    threshold: 0.2,
+    rootMargin: '50px'
+  });
+  
+  cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px) scale(0.95)';
+    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+    observer.observe(card);
+  });
+}
+
+// Initialize animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize both tech and health science cards
+  initializeCards('.tech-detail-box, .hs-detail-box');
+});
