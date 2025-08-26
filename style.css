@@ -73,6 +73,205 @@
   }
 }
 
+/* Navbar Dropdown Styles */
+.navbar {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 0;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(149, 149, 149, 0.715);
+    backdrop-filter: blur(50%);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 0.8rem 0;
+    min-width: 230px;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-item.dropdown:hover > .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar .dropdown-item {
+    padding: 0.7rem 1.5rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: bolder;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.811);
+    color: #e67e22;
+    padding-left: 2rem;
+}
+
+.navbar .dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background-color: #e67e22;
+    transition: all 0.3s ease;
+}
+
+.navbar .dropdown-item:hover::before {
+    height: 100%;
+}
+
+.navbar .dropdown-divider {
+    margin: 0.5rem 0;
+    border-color: rgba(45, 49, 140, 0.1);
+}
+
+/* Dropdown Toggle Arrow */
+.navbar .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.navbar .nav-item.dropdown:hover > .dropdown-toggle::after,
+.navbar .dropdown-submenu:hover > .dropdown-toggle::after {
+    transform: rotate(-180deg);
+}
+
+/* Submenu positioning */
+.navbar .dropdown-submenu {
+    position: relative;
+}
+
+.navbar .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+}
+
+/* Show submenu on hover (desktop) */
+@media (min-width: 992px) {
+    .navbar .dropdown-submenu:hover > .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        display: block;
+    }
+}
+
+/* Animation */
+@keyframes dropdownAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 991px) {
+    .navbar .dropdown-menu {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    .navbar .dropdown-item {
+        color: #ffffff;
+        padding: 0.8rem 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
+
+    .navbar .dropdown-item::before {
+        display: none;
+    }
+
+    .navbar .dropdown-divider {
+        border-color: rgba(255, 255, 255, 0.1);
+        margin: 0;
+    }
+
+    .navbar .nav-item.dropdown .dropdown-toggle::after {
+        float: right;
+        margin-top: 8px;
+    }
+
+    .navbar .dropdown-menu {
+        display: none;
+        transform: none;
+    }
+
+    .navbar .nav-item.dropdown:hover > .dropdown-menu,
+    .navbar .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+    }
+}
+
+/* Animation for mobile dropdown */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional hover effects for desktop */
+@media (min-width: 992px) {
+    .navbar .dropdown-item:hover {
+        transform: translateX(5px);
+    }
+
+    .navbar .nav-item.dropdown:hover > .dropdown-menu {
+        animation: dropdownAnimation 0.3s ease forwards;
+    }
+
+    .navbar .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 20px;
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.95);
+        transform: rotate(45deg);
+        z-index: -1;
+    }
+}
 .video-section {
   position: relative;
   height: 95vh;
@@ -3784,6 +3983,105 @@ body {
   .stat-icon { font-size: 32px; }
 }
 
+/* Animated Button Styles */
+.animated-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #2d318c, #3f51b5);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 49, 140, 0.2);
+}
+
+.animated-button .button-text {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.animated-button .button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  margin-left: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.animated-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #3f51b5, #2d318c);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+/* Hover Effects */
+.animated-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(45, 49, 140, 0.3);
+  color: white;
+}
+
+.animated-button:hover::before {
+  left: 0;
+}
+
+.animated-button:hover .button-text {
+  transform: translateX(-8px);
+}
+
+.animated-button:hover .button-icon {
+  width: 24px;
+  margin-left: 8px;
+}
+
+/* Active State */
+.animated-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(45, 49, 140, 0.2);
+}
+
+/* Animation for Icon */
+@keyframes arrowMove {
+  0% {
+      transform: translateX(-5px);
+      opacity: 0;
+  }
+  50% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(5px);
+      opacity: 0;
+  }
+}
+
+.animated-button:hover .button-icon i {
+  animation: arrowMove 1s infinite;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .animated-button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
+}
 
 /* school of technology starts  */
 
@@ -4050,6 +4348,275 @@ body {
   }
   
   .tech-detail-box p {
+    font-size: 0.85rem;
+  }
+}
+
+/* school of health science starts  */
+
+.soh-container {
+  background-color: #e67e22;
+  /* Deep purple/blue background as seen in the image */
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 15px;
+  /* Added border radius to match image containers */
+  overflow: hidden;
+}
+
+.soh-heading {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+/* On mobile, show the heading at the top */
+@media (max-width: 767px) {
+  .soh-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* On desktop, also show the heading in the center */
+@media (min-width: 992px) {
+  .soh-container .row:first-child {
+    display: none;
+    /* Hide the top heading on desktop */
+  }
+
+  .soh.col-lg-6.d-none.d-lg-block {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .soh.col-lg-6.d-none.d-lg-block:before {
+    content: "SCHOOL OF HEALTH SCIENCE";
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+}
+
+/* Specific style for 1024px width */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .soh.col-lg-6.d-none.d-lg-block:before {
+    font-size: 3rem;
+    /* Smaller font size for 1024px */
+  }
+
+}
+
+/* Tablet specific styles (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .soh-heading {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Show the title at top on tablet */
+  .soh-container .row:first-child {
+    display: block;
+  }
+
+  /* Hide the center title section on tablet */
+  .soh.col-md-6.d-none.d-md-block {
+    display: none !important;
+  }
+
+  /* Make 2x2 grid for tablet */
+  .col-md-3 {
+    width: 50%;
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+
+.soh-image-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 8px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.soh-image-container:hover {
+  transform: scale(1.03);
+}
+
+.soh-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Mobile specific styles to match the provided image */
+@media (max-width: 575px) {
+  .soh-container {
+    padding: 15px;
+  }
+
+  /* Force column layout on mobile */
+  .col-6 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .soh-image-container {
+    margin-bottom: 10px;
+  }
+
+  /* Hide the middle empty section in mobile view */
+  .col-12.col-md-6.d-none.d-md-block {
+    display: none !important;
+  }
+}
+
+/* school of health science ends  */
+
+/* Add this to your style.css file */
+.hs-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #FFFFFF;
+  margin: 0rem auto;
+  max-width: 1500px;
+  position: relative;
+  
+}
+
+.hs-detail-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border: 3px solid rgb(230, 126, 34);
+  position: relative;
+  overflow: hidden;
+}
+
+.hs-detail-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.hs-detail-box h3 {
+  color: #1a237e;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: 600;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.hs-detail-box h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #4285f4;
+  border-radius: 2px;
+}
+
+.hs-detail-box p {
+  color: #000000;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  font-weight: 470;
+}
+
+/* Technology-specific accent colors */
+.hs-detail-box[data-tech="quantum"] h3::before { background: #4285f4; }
+.hs-detail-box[data-tech="robotics"] h3::before { background: #34a853; }
+.hs-detail-box[data-tech="augmented"] h3::before { background: #fbbc05; }
+.hs-detail-box[data-tech="artificial"] h3::before { background: #ea4335; }
+.hs-detail-box[data-tech="biotechnology"] h3::before { background: #0f9d58; }
+.hs-detail-box[data-tech="iot"] h3::before { background: #4285f4; }
+
+/* Hover effects */
+.hs-detail-box:hover p {
+  color: #000;
+}
+
+.hs-detail-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hs-detail-box:hover::after {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .hs-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hs-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .hs-detail-box {
+    padding: 1.25rem;
+  }
+  
+  .hs-detail-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .hs-detail-box p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 576px) {
+  .hs-details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hs-detail-box {
+    padding: 1rem;
+  }
+  
+  .hs-detail-box h3 {
+    font-size: 1rem;
+  }
+  
+  .hs-detail-box p {
     font-size: 0.85rem;
   }
 }

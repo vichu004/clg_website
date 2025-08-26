@@ -1116,3 +1116,280 @@ footer li {
   }
 }
 /* University Footer Styles end*/
+
+/* University Statistics starts */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #2d318c;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.stat-box:hover::before {
+    opacity: 1;
+}
+
+.stat-icon {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    color: #2d318c;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover .stat-icon {
+    transform: scale(1.1);
+}
+
+.stat-box h3 {
+    color: #2d318c;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+    position: relative;
+}
+
+.stat-box h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: rgba(45, 49, 140, 0.2);
+}
+
+.stat-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stat-box ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 1rem;
+    color: #424242;
+}
+
+.stat-box ul li:last-child {
+    border-bottom: none;
+}
+
+.stat-box .number {
+    color: #2d318c;
+    font-weight: 600;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+/* Top Profiles/Programs Section */
+.top-profiles,
+.top-programs {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.top-profiles h4,
+.top-programs h4 {
+    color: #2d318c;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.profile-grid,
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.profile-item,
+.program-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-item:hover,
+.program-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.profile-image,
+.program-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.profile-image img,
+.program-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-item:hover img,
+.program-item:hover img {
+    transform: scale(1.1);
+}
+
+.profile-info,
+.program-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(45, 49, 140, 0.95), rgba(45, 49, 140, 0.7));
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.profile-item:hover .profile-info,
+.program-item:hover .program-info {
+    transform: translateY(0);
+}
+
+.achievement,
+.program-info h5 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.batch,
+.department,
+.year,
+.program-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+/* Animations */
+.stat-box {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.stat-box:nth-child(1) { animation-delay: 0.1s; }
+.stat-box:nth-child(2) { animation-delay: 0.2s; }
+.stat-box:nth-child(3) { animation-delay: 0.3s; }
+.stat-box:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .stat-box {
+        padding: 1.5rem;
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+    }
+    
+    .stat-box h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .profile-grid,
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat-box ul li {
+        font-size: 0.95rem;
+    }
+    
+    .stat-box .number {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-grid,
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-box {
+        padding: 1.25rem;
+    }
+    
+    .top-profiles,
+    .top-programs {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+    }
+}
+
+/* University Statistics ends */
