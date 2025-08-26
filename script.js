@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Add a small delay to ensure smooth initial display
     setTimeout(() => {
-        const aboutSection = document.getElementById('about');
+        const aboutSection = document.getElementById('home');
         if (aboutSection) {
             aboutSection.scrollIntoView({
                 behavior: 'smooth',
