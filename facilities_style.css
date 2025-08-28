@@ -1,0 +1,142 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #444;
+}
+
+.facility-section {
+    padding: 100px 0;
+}
+
+.facility-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 40px;
+}
+
+.facility-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.facility-image {
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+.facility-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.facility-card:hover .facility-image img {
+    transform: scale(1.15);
+}
+
+.facility-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    opacity: 0.8;
+}
+
+.facility-content {
+    padding: 25px;
+    position: relative;
+}
+
+.facility-title {
+    color: #2c3e50;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.facility-description {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.facility-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #3498db;
+    background: -webkit-linear-gradient(45deg, #3498db, #8e44ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-header {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('../img/campus-header.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 5px solid #3498db;
+}
+
+.page-header h1 {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.breadcrumb {
+    background: transparent;
+    justify-content: center;
+    padding: 0;
+}
+
+.breadcrumb-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #3498db;
+}
+
+.breadcrumb-item.active {
+    color: #3498db;
+    font-weight: 600;
+}
+
+.contact-info {
+    background: linear-gradient(45deg, #2c3e50, #34495e);
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 60px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    color: #3498db;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.contact-info i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
