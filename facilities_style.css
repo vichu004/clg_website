@@ -74,7 +74,6 @@ body {
     margin-bottom: 20px;
     color: #3498db;
     background: -webkit-linear-gradient(45deg, #3498db, #8e44ad);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
