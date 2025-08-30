@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P K DAS UNIVERSITY</title>
+
+  <!-- zoom prevention meta link  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+  <!-- bootstrap link  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+  <!-- fontawseome link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- external style  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- external css link  -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="facilities_style.css">
+  <style>
+
+/* facility css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f7f6;
+  color: #444;
+}
+
+.facility-section {
+  padding: 100px 0;
+}
+
+.facility-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-bottom: 40px;
+}
+
+.facility-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.facility-image {
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.facility-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.facility-card:hover .facility-image img {
+  transform: scale(1.15);
+}
+
+.facility-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  opacity: 0.8;
+}
+
+.facility-content {
+  padding: 25px;
+  position: relative;
+}
+
+.facility-title {
+  color: #2c3e50;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.facility-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.facility-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #3498db;
+  background: -webkit-linear-gradient(45deg, #3498db, #8e44ad);
+  -webkit-text-fill-color: transparent;
+}
+
+.page-header {
+  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('../img/campus-header.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+  margin-bottom: 60px;
+  border-bottom: 5px solid #3498db;
+}
+
+.page-header h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.breadcrumb {
+  background: transparent;
+  justify-content: center;
+  padding: 0;
+}
+
+.breadcrumb-item a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: #3498db;
+}
+
+.breadcrumb-item.active {
+  color: #3498db;
+  font-weight: 600;
+}
+
+.contact-info {
+  background: linear-gradient(45deg, #2c3e50, #34495e);
+  color: white;
+  padding: 50px;
+  border-radius: 20px;
+  margin-top: 60px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+  color: #3498db;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.contact-info i {
+  margin-right: 15px;
+  width: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .contact-info {
+    padding: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .contact-info {
+    padding: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .contact-info {
+    padding: 20px;
+  }
+}
+
+
+.about-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: #2d318c;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.about-underline {
+    width: 120px;
+    height: 5px;
+    margin: 0 auto 30px auto;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #2d318c 0%, #f7971e 100%);
+}
+
+.about-text {
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+  </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center h5">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    
+                    <!-- About Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="AboutUs/about.html">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="AboutUs/founder-chairman.html">Executives</a></li>
+                            <li><a class="dropdown-item" href="AboutUs/courses.html">Courses</a></li>
+                            <li><a class="dropdown-item" href="facilities.html">Facilities</a></li>
+                            <li><a class="dropdown-item" href="AboutUs/ngi-institution.html">All NGI Institutions</a></li>
+                            <li><a class="dropdown-item" href="AboutUs/university-stats.html">University Stats</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Coimbatore">Coimbatore</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Placement Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#placements">
+                            Placements
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#placement-stats">In Campus</a></li>
+                            <li><a class="dropdown-item" href="#recruiters">Off Campus</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Institutions Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="AboutUs/ngi-institution.html">
+                            Institutions
+                        </a>
+                        <ul class="dropdown-menu">
+                          <!-- Tamil Nadu submenu -->
+                            <li class="dropdown-submenu dropend">
+                              <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Tamil Nadu</a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="https://www.nehrucolleges.org/" target="_blank">Nehru Institute of Engineering & Technology</a></li>
+                                  <li><a class="dropdown-item" href="https://www.nehruinstitute.com/" target="_blank">Nehru Institute of Technology</a></li>
+                                  <li><a class="dropdown-item" href="https://nasccbe.ac.in/" target="_blank">Nehru Arts and Science College</a></li>
+                                  <li><a class="dropdown-item" href="https://ncmbschool.com/" target="_blank">Nehru College of Management</a></li>
+                                  <li><a class="dropdown-item" href="https://niitm.org/" target="_blank">Nehru Institute of IT & Management</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="AboutUs/ngi-institution.html">More from Tamil Nadu…</a></li>
+                                </ul>
+                            </li>
+                          
+                          <!-- Kerala submenu -->
+                            <li class="dropdown-submenu dropend">
+                              <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Kerala</a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="https://ncerc.ac.in/" target="_blank">Nehru College of Engineering & Research Centre</a></li>
+                                  <li><a class="dropdown-item" href="https://www.jainstitute.com/" target="_blank">Jawaharlal Aviation Institute</a></li>
+                                  <li><a class="dropdown-item" href="https://jawaharlalcolleges.com/" target="_blank">Jawaharlal College of Engineering & Technology</a></li>
+                                  <li><a class="dropdown-item" href="https://nca.ind.in/" target="_blank">Nehru College of Architecture</a></li>
+                                  <li><a class="dropdown-item" href="https://ncp.net.in/" target="_blank">Nehru College of Pharmacy</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="AboutUs/ngi-institution.html">More from Kerala…</a></li>
+                                </ul>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="AboutUs/ngi-institution.html">View All Institutions</a></li>
+                        </ul>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#explore_campus">Virtual Tour</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="timeline.html">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="about-title">OUR Facilities</div>
+    <div class="about-underline"></div>
+
+    <!-- Facilities Section -->
+    <main class="facility-section">
+        <div class="container">
+            <div class="row">
+                <!-- Library -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="img/library.jpg" alt="Library">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-book facility-icon"></i>
+                            <h3 class="facility-title">Central Library</h3>
+                            <p class="facility-description">State-of-the-art library with an extensive collection of books, journals, and digital resources. Features quiet study spaces and modern research facilities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laboratories -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="img/lab.jpg" alt="Laboratory">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-flask facility-icon"></i>
+                            <h3 class="facility-title">Research Laboratories</h3>
+                            <p class="facility-description">Advanced research laboratories equipped with modern instruments and technology for practical learning and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="img/sports.jpg" alt="Sports">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-running facility-icon"></i>
+                            <h3 class="facility-title">Sports Complex</h3>
+                            <p class="facility-description">A multi-purpose sports complex with indoor and outdoor facilities including a gymnasium, swimming pool, and multiple courts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hostel -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="img/hostel.jpg" alt="Hostel">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-home facility-icon"></i>
+                            <h3 class="facility-title">Student Hostels</h3>
+                            <p class="facility-description">Comfortable accommodation with modern amenities, 24/7 security, and dedicated mess facilities for both boys and girls.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cafeteria -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="img/cafeteria.jpg" alt="Cafeteria">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-utensils facility-icon"></i>
+                            <h3 class="facility-title">Food Court</h3>
+                            <p class="facility-description">A modern cafeteria serving a variety of nutritious meals, snacks, and beverages in a comfortable dining environment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Center -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="img/medical.jpg" alt="Medical Center">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-hospital facility-icon"></i>
+                            <h3 class="facility-title">Health Center</h3>
+                            <p class="facility-description">An on-campus medical facility with qualified healthcare professionals providing 24/7 emergency medical services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3>Need More Information?</h3>
+                        <p>Our facilities management team is here to help. Contact us for details on our campus offerings.</p>
+                        <p><i class="fas fa-phone"></i> +91 96003 33152</p>
+                        <p><i class="fas fa-envelope"></i> facilities@pkdas.edu.in</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <h3>Visiting Hours</h3>
+                        <p><i class="fas fa-clock"></i> Mon - Fri: 9 AM - 5 PM</p>
+                        <p><i class="fas fa-calendar"></i> Sat: 9 AM - 1 PM</p>
+                        <p><i class="fas fa-ban"></i> Sun: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<footer class="pt-5 pb-2" id="footer">
+  <div class="container">
+    <div class="row mb-4">
+      <!-- Address Section -->
+      <div class="col-lg-3 col-md-6 ">
+        <a class="logo-placeholder " href="#">
+          <img src="img/logo.png" alt="" width="200">
+        </a>
+        <p class="mb-5 mt-3 ">
+          #451-D, Palakkad Road,<br>
+          Kuniyamuthur, Coimbatore,<br>
+
+          Tamil Nadu, India.<br>
+          PIN: 641 008<br>
+          +91 96003 33152
+        </p>
+      </div>
+
+      <!-- vertical line Section -->
+      <div class="col-auto d-none d-lg-block">
+        <div class="vr h-100 footer-vr"></div>
+      </div>
+
+      <!-- Quick Links 1 -->
+      <div class="col-lg-3 col-md-6 ">
+        <ul>
+          <li></li><a href="#"><i class="fa-solid fa-wallet"></i> Pay Fee</a>
+          <li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Institutions</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Placement</a></li>
+          <li><a href="#">NGI @ Glance</a></li>
+          <li><a href="#">Achievements</a></li>
+          <li><a href="#">Explore Campus</a></li>
+        </ul>
+      </div>
+
+      <!-- vertical line Section -->
+      <div class="col-auto d-none d-lg-block">
+        <div class="vr h-100 footer-vr"></div>
+      </div>
+
+      <!-- Quick Links 2 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <ul>
+          <li><a href="https://ngitbi.com/">Technology business incubator (TBI)</a></li>
+          <li><a href="https://nehruplacements.com/">NCPIR</a></li>
+          <li><a href="https://nginewgeniedc.com/">NGI NewGen IDEC</a></li>
+          <li><a href="https://nehrucolleges.com/research">NGI Research</a></li>
+          <li><a href="https://nehrucolleges.com/sports">Nobel Camp</a></li>
+        </ul>
+
+      </div>
+      <!-- vertical line Section -->
+      <div class="col-auto d-none d-lg-block">
+        <div class="vr h-100 footer-vr"></div>
+      </div>
+
+      <!-- Quick Links 3 -->
+      <div class="col-lg-2 col-md-6 mb-4">
+        <ul>
+          <li><a href="https://nehrucolleges.com/admission-policy">Admission Policy</a></li>
+          <li><a href="https://nehrucolleges.com/admission-centers">Admission Center</a></li>
+          <li><a href="https://nehrucolleges.info/happenings/">NGI Scholarship</a></li>
+          <li><a href="https://nehrucolleges.com/assets/ngi/downloads/NGI-E-Brochuer.pdf">Download Brochure</a></li>
+          <li><a href="https://nehrucolleges.com/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom py-3">
+    <div class="container-copyrights">
+      <!-- Links -->
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+        <a href="#" class="mx-2 mb-2">Careers</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">Sitemap</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">Disclaimer</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">Privacy Policy</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">Email</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">Terms & Conditions</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">Refund Policy</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">IT Policy</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">Library</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">Anti Ragging</a>
+        <span class="mx-1 text-black-50">|</span>
+        <a href="#" class="mx-2 mb-2">Finance</a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-center mb-3" style="color: black;">&copy; Copyright 2025 PK Das Deemed University | Rights
+        Reserved</p>
+
+      <!-- Social Icons -->
+      <div class="social-icons text-center d-lg-black mb-2">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="player"></div>
+
+<!-- youtube video api  -->
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+<!-- gsap animation link  -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- ends here  -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+<!-- Auto-generate captions under each institution image -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const institutionUrls = {
+      'Nehru Institute of Engineering and Technology': 'https://nehrucolleges.org',
+      'Nehru Arts and Science College': 'https://nasccbe.ac.in',
+      'Nehru Institute of Technology': 'https://nehruinstitute.com',
+      'Nehru Institute of Information Technology & Management': 'https://niitm.org',
+      'Nehru College of Management': 'https://ncmbschool.com',
+      'Jawaharlal College of Engineering & Technology': 'https://jawaharlalcolleges.com',
+      'Nehru College of Architecture': 'https://www.thenehrucolleges.com',
+      'Nehru College of Nursing and Research Institute': 'https://ncnri.com/',
+      'Nehru College of Physiotherapy': 'https://nehruphysiotherapy.com/',
+      'Nehru International School': 'https://nehruinternationalschool.com/',
+      'Jawaharlal Aviation Institute': 'https://www.jainstitute.com/',
+      'Nehru Academy of Law': 'https://nal.net.in/',
+      'Nehru College of Pharmacy': 'https://ncp.net.in/',
+      'PK Das Institute of Medical Sciences': 'https://pkdims.org/',
+      'PKDAS College of Nursing': 'https://pkdascollegeofnursing.com/'
+    };
+
+    document.querySelectorAll('.institution-item').forEach((item) => {
+      // Skip if caption already exists
+      if (item.querySelector('.institution-caption')) return;
+      
+      // Get the title from h3 or img alt
+      const title = (item.querySelector('.overlay h3')?.textContent || item.querySelector('img')?.alt || 'Institution').trim();
+      
+      // Get the corresponding URL for this institution
+      const url = institutionUrls[title] || item.querySelector('.institution-link').href;
+      
+      // Create wrapper anchor tag
+      const wrapper = document.createElement('a');
+      wrapper.href = url;
+      wrapper.target = '_blank';
+      wrapper.className = 'institution-caption-link';
+      
+      // Create caption div
+      const cap = document.createElement('div');
+      cap.className = 'institution-caption';
+      cap.textContent = title;
+      
+      // Add caption to wrapper and wrapper to item
+      wrapper.appendChild(cap);
+      item.appendChild(wrapper);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('img').forEach(img => {
+      if (!img.hasAttribute('loading')) {
+        img.setAttribute('loading', 'lazy');
+      }
+    });
+  });
+</script>
+<script src="script.js"></script>
+<script src="animation.js"></script>
+
+</body>
+</html>
