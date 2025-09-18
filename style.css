@@ -4631,7 +4631,33 @@ body {
   border-left: 5px solid #f1c40f;
 }
 
-/* Add medical icons */
+/* Social Science variants */
+.hs-detail-box[data-tech="Sociology"] {
+  background: linear-gradient(135deg, #f6fbff, #ffffff);
+  border-left: 5px solid #1e90ff;
+}
+.hs-detail-box[data-tech="Psychology"] {
+  background: linear-gradient(135deg, #fff6fb, #ffffff);
+  border-left: 5px solid #ff69b4;
+}
+.hs-detail-box[data-tech="Economics"] {
+  background: linear-gradient(135deg, #f6fff6, #ffffff);
+  border-left: 5px solid #2ecc71;
+}
+.hs-detail-box[data-tech="Political Science"] {
+  background: linear-gradient(135deg, #fef9f3, #ffffff);
+  border-left: 5px solid #f39c12;
+}
+.hs-detail-box[data-tech="Anthropology"] {
+  background: linear-gradient(135deg, #f8f6ff, #ffffff);
+  border-left: 5px solid #8e44ad;
+}
+.hs-detail-box[data-tech="Social Work"] {
+  background: linear-gradient(135deg, #f3fffc, #ffffff);
+  border-left: 5px solid #16a085;
+}
+
+/* Add icons */
 .hs-detail-box::after {
   font-family: 'Font Awesome 5 Free';
   position: absolute;
@@ -4642,12 +4668,21 @@ body {
   transition: all 0.3s ease;
 }
 
-.hs-detail-box[data-tech="Orthopaedic"]::after { content: '\f5cb'; }     /* Bone icon */
-.hs-detail-box[data-tech="Ophthalmology"]::after { content: '\f06e'; }   /* Eye icon */
-.hs-detail-box[data-tech="infusion pump"]::after { content: '\f48e'; }   /* Medical drip icon */
-.hs-detail-box[data-tech="Exoskeletons"]::after { content: '\f21e'; }    /* Person icon */
-.hs-detail-box[data-tech="MRI"]::after { content: '\f0f7'; }            /* Hospital icon */
-.hs-detail-box[data-tech="Dialysis Machine"]::after { content: '\f469'; } /* Medical device icon */
+/* Health icons */
+.hs-detail-box[data-tech="Orthopaedic"]::after { content: '\f5cb'; }
+.hs-detail-box[data-tech="Ophthalmology"]::after { content: '\f06e'; }
+.hs-detail-box[data-tech="infusion pump"]::after { content: '\f48e'; }
+.hs-detail-box[data-tech="Exoskeletons"]::after { content: '\f21e'; }
+.hs-detail-box[data-tech="MRI"]::after { content: '\f0f7'; }
+.hs-detail-box[data-tech="Dialysis Machine"]::after { content: '\f469'; }
+
+/* Social Science icons */
+.hs-detail-box[data-tech="Sociology"]::after { content: '\f0c0'; }
+.hs-detail-box[data-tech="Psychology"]::after { content: '\f5da'; }
+.hs-detail-box[data-tech="Economics"]::after { content: '\f155'; }
+.hs-detail-box[data-tech="Political Science"]::after { content: '\f19c'; }
+.hs-detail-box[data-tech="Anthropology"]::after { content: '\f183'; }
+.hs-detail-box[data-tech="Social Work"]::after { content: '\f4b5'; }
 
 .hs-detail-box:hover::after {
   opacity: 0.3;
