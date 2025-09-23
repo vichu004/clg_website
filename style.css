@@ -1298,84 +1298,61 @@
 /* acheivements style ends  */
 
 
-/* school categories style starts  */
 
-.school-categories-section {
-  width: 100%;
-  padding: 40px 20px;
-  background-color: #ffffff;
-}
-
-/* Section Title */
-.section-title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-/* School Categories Layout */
+/* school categories style ends  */
 .school-categories {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 10px;
+  align-items: stretch;
 }
 
-/* Left Column Layout */
-.left-column {
-  width: 65%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+
+.school-categories .image-wrapper {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+.school-categories .image-wrapper:hover {
+  border-color: #e67e22;
+  box-shadow: 0 4px 15px rgba(46, 48, 143, 0.3);
 }
 
-/* Row Layout */
+
+/* Flatten nested wrappers so each image becomes a grid item */
+.left-column,
+.right-column,
 .row1 {
-  display: flex;
-  gap: 10px;
+  display: contents;
 }
 
-/* Large Image Row */
-.large-image .image-wrapper {
-  width: 100%;
-  height: 300px;
-}
-
-/* Two Smaller Images Row */
-.two-images .image-wrapper {
-  width: 50%;
-  height: 150px;
-}
-
-/* Right Column Layout */
-.right-column {
-  width: 35%;
-}
-
-/* Right Column Single Image */
-.right-column .image-wrapper {
-  width: 100%;
-  height: 460px;
-}
-
-/* Image Wrapper to hold the image and overlay */
+/* Ensure all four images share the same size via aspect-ratio */
 .image-wrapper {
   position: relative;
   width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* change to 4/3 if you prefer a taller box */
   overflow: hidden;
   border-radius: 12px;
 }
 
-/* Image Styling */
+/* Reset old fixed sizes */
+.large-image .image-wrapper,
+.two-images .image-wrapper,
+.right-column .image-wrapper {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Image fit */
 .image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Overlay Content on Each Image */
+/* Overlay stays as-is; tweak position if you want it slightly higher */
 .overlay-content {
   position: absolute;
   top: 60%;
@@ -1388,21 +1365,31 @@
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-/* Overlay Heading Styling */
-.overlay-content h1,
-.overlay-content h2 {
-  display: inline-block;
-  /* Align headings in one line */
-  font-size: 20px;
-  margin: 5px 10px 5px 0;
-  white-space: nowrap;
-  vertical-align: middle;
+.image-wrapper:hover .overlay-content {
+  opacity: 1;
+  transform: translate(-50%, -60%);
 }
 
-/* Overlay Paragraph */
-.overlay-content p {
-  font-size: 16px;
-  margin-bottom: 5px;
+/* Dark overlay */
+.image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.image-wrapper:hover::before { opacity: 1; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .school-categories {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .overlay-content h1, .overlay-content h2 { font-size: 16px; }
+  .overlay-content p { font-size: 14px; }
 }
 
 /* CTA Button Styling */
@@ -1427,91 +1414,9 @@
   background: linear-gradient(90deg, #8e44ad, #4a90e2);
 }
 
-/* Show Overlay on Hover */
-.image-wrapper:hover .overlay-content {
-  opacity: 1;
-  transform: translate(-50%, -60%);
-}
-
-/* Add Dark Overlay on Image */
-.image-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  /* Dark overlay */
-  z-index: 1;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-}
-
-/* Dark Overlay Visible on Hover */
-.image-wrapper:hover::before {
-  opacity: 1;
-}
-
-/* Responsive Design for Tablet and Mobile */
-@media (max-width: 768px) {
-  .school-categories {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .left-column,
-  .right-column {
-    width: 100%;
-  }
-
-  .large-image .image-wrapper,
-  .right-column .image-wrapper {
-    height: 200px;
-  }
-
-  .two-images .image-wrapper {
-    height: 150px;
-  }
-
-  .overlay-content h1,
-  .overlay-content h2 {
-    font-size: 16px;
-  }
-
-  .overlay-content p {
-    font-size: 14px;
-  }
-
-  .cta-btn {
-    padding: 8px 20px;
-    font-size: 14px;
-  }
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 480px) {
-
-  .overlay-content h1,
-  .overlay-content h2 {
-    font-size: 14px;
-  }
-
-  .overlay-content p {
-    font-size: 12px;
-  }
-
-  .cta-btn {
-    padding: 6px 16px;
-    font-size: 12px;
-  }
-
-  .two-images .image-wrapper {
-    width: 100%;
-  }
-}
-
 /* school categories style ends  */
+
+
 
 /* placement section starts  */
 
