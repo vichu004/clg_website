@@ -4336,12 +4336,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.tech-detail-box[data-tech="quantum"]::after { content: '\f121'; }   /* Code icon */
-.tech-detail-box[data-tech="robotics"]::after { content: '\f544'; }  /* Robot icon */
-.tech-detail-box[data-tech="augmented"]::after { content: '\f827'; } /* VR icon */
-.tech-detail-box[data-tech="artificial"]::after { content: '\f544'; } /* Brain icon */
-.tech-detail-box[data-tech="biotechnology"]::after { content: '\f486'; } /* DNA icon */
-.tech-detail-box[data-tech="iot"]::after { content: '\f1eb'; }      /* WiFi icon */
 
 .tech-detail-box:hover::after {
   opacity: 0.3;
@@ -4657,6 +4651,32 @@ body {
   border-left: 5px solid #16a085;
 }
 
+/* Arts & Science variants */
+.hs-detail-box[data-tech="Music Performance"] {
+  background: linear-gradient(135deg, #f8f3ff, #ffffff);
+  border-left: 5px solid #8e44ad;
+}
+.hs-detail-box[data-tech="Music Production"] {
+  background: linear-gradient(135deg, #f3f9ff, #ffffff);
+  border-left: 5px solid #2980b9;
+}
+.hs-detail-box[data-tech="Classical Dance"] {
+  background: linear-gradient(135deg, #fff5ef, #ffffff);
+  border-left: 5px solid #e67e22;
+}
+.hs-detail-box[data-tech="Choreography"] {
+  background: linear-gradient(135deg, #fff2f6, #ffffff);
+  border-left: 5px solid #e84393;
+}
+.hs-detail-box[data-tech="Visual Arts"] {
+  background: linear-gradient(135deg, #fff7f6, #ffffff);
+  border-left: 5px solid #e74c3c;
+}
+.hs-detail-box[data-tech="Theatre Arts"] {
+  background: linear-gradient(135deg, #f6f8ff, #ffffff);
+  border-left: 5px solid #2c3e50;
+}
+
 /* Add icons */
 .hs-detail-box::after {
   font-family: 'Font Awesome 5 Free';
@@ -4668,21 +4688,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Health icons */
-.hs-detail-box[data-tech="Orthopaedic"]::after { content: '\f5cb'; }
-.hs-detail-box[data-tech="Ophthalmology"]::after { content: '\f06e'; }
-.hs-detail-box[data-tech="infusion pump"]::after { content: '\f48e'; }
-.hs-detail-box[data-tech="Exoskeletons"]::after { content: '\f21e'; }
-.hs-detail-box[data-tech="MRI"]::after { content: '\f0f7'; }
-.hs-detail-box[data-tech="Dialysis Machine"]::after { content: '\f469'; }
 
-/* Social Science icons */
-.hs-detail-box[data-tech="Sociology"]::after { content: '\f0c0'; }
-.hs-detail-box[data-tech="Psychology"]::after { content: '\f5da'; }
-.hs-detail-box[data-tech="Economics"]::after { content: '\f155'; }
-.hs-detail-box[data-tech="Political Science"]::after { content: '\f19c'; }
-.hs-detail-box[data-tech="Anthropology"]::after { content: '\f183'; }
-.hs-detail-box[data-tech="Social Work"]::after { content: '\f4b5'; }
 
 .hs-detail-box:hover::after {
   opacity: 0.3;
