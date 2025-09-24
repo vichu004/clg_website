@@ -1301,7 +1301,7 @@
           <img src="img/event4.jpg" alt="Event 4" class="event-image">
           <div class="event-content">
             <h3>A New Chapter in Critical Care Excellence</h3>
-            <p>>Date: August 30, 2025</p>
+            <p>Date: August 30, 2025</p>
             <p>The addition of our newly upgraded ICU Complex (MICU, CCU) at PK Das Institute of Medical Sciences was inaugurated on 30th August 2025 by Adv. Dr. P. Krishnadas, along with distinguished guests.</p>
             <a href="#" class="event-btn">Learn More</a>
           </div>
@@ -2038,6 +2038,79 @@
 <script src="script.js"></script>
 <script src="animation.js"></script>
 
+
+
+<!-- Event Details Modal (same style/behavior as Achievements modal) -->
+<div id="eventDetailsModal" class="achievement-modal">
+  <div class="achievement-modal-content">
+    <span class="close-event-modal" style="cursor: pointer;">&times;</span>
+    <div id="eventDetailsContent"><!-- Filled dynamically --></div>
+  </div>
+</div>
+
+<script>
+  // Build modal content matching Achievements modal layout/classes
+  function openEventModalFromCard(cardEl) {
+    const modal = document.getElementById('eventDetailsModal');
+    const content = document.getElementById('eventDetailsContent');
+
+    const title = (cardEl.querySelector('h3')?.textContent || 'Event').trim();
+    const imgEl = cardEl.querySelector('.event-image');
+    const image = imgEl?.getAttribute('src') || '';
+    const alt = imgEl?.getAttribute('alt') || title;
+
+    const paragraphs = cardEl.querySelectorAll('.event-content p');
+    const dateText = (paragraphs[0]?.textContent || '').trim();
+    const descText = (paragraphs[1]?.textContent || '').trim();
+
+    content.innerHTML = `
+      <div class="achievement-header">
+        <img src="${image}" alt="${alt}" class="achievement-image">
+        <div class="achievement-title-section">
+          <h2>${title}</h2>
+          <p class="achievement-date">${dateText}</p>
+        </div>
+      </div>
+      <div class="achievement-description">
+        <p>${descText}</p>
+      </div>
+    `;
+
+    // Show modal (same behavior as achievements)
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Wire up Learn More buttons in Events section
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.events-section .event-card .event-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const card = btn.closest('.event-card');
+        if (card) openEventModalFromCard(card);
+      });
+    });
+
+    // Close with X
+    const closeBtn = document.querySelector('.close-event-modal');
+    if (closeBtn) {
+      closeBtn.onclick = function () {
+        const modal = document.getElementById('eventDetailsModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      };
+    }
+
+    // Close when clicking outside (use addEventListener to avoid overriding existing handlers)
+    window.addEventListener('click', function (event) {
+      const modal = document.getElementById('eventDetailsModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+  });
+</script>
 
 </body>
 
