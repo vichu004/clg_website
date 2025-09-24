@@ -27,12 +27,12 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f7f6;
+  background-color: #ffffff;
   color: #444;
 }
 
 .facility-section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .facility-card {
@@ -83,14 +83,14 @@ body {
 }
 
 .facility-title {
-  color: #2c3e50;
+  color: #2d318c;
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .facility-description {
-  color: #666;
+  color: #000000;
   font-size: 1rem;
   line-height: 1.7;
 }
@@ -199,7 +199,9 @@ body {
     font-weight: 700;
     color: #2d318c;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+
 }
 
 .about-underline {
@@ -216,6 +218,9 @@ body {
     margin-bottom: 15px;
 }
 
+.navbar {
+    background: linear-gradient(90deg, #ffd5a2 0%, #bbbeff 100%);
+}
   </style>
 
 </head>
@@ -243,6 +248,7 @@ body {
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="AboutUs/founder-chairman.html">Executives</a></li>
+                            <li><a class="dropdown-item" href="#events">Events</a></li>
                             <li><a class="dropdown-item" href="AboutUs/courses.html">Courses</a></li>
                             <li><a class="dropdown-item" href="facilities.html">Facilities</a></li>
                             <li><a class="dropdown-item" href="AboutUs/ngi-institution.html">All NGI Institutions</a></li>
@@ -315,7 +321,7 @@ body {
         </div>
     </nav>
 
-    <div class="about-title">OUR Facilities</div>
+    <div class="about-title">Our Facilities</div>
     <div class="about-underline"></div>
 
     <!-- Facilities Section -->
@@ -326,10 +332,9 @@ body {
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="facility-card">
                         <div class="facility-image">
-                            <img src="img/library.jpg" alt="Library">
+                            <img src="facilities-img/Central-Library.jpg" alt="Library">
                         </div>
                         <div class="facility-content">
-                            <i class="fas fa-book facility-icon"></i>
                             <h3 class="facility-title">Central Library</h3>
                             <p class="facility-description">State-of-the-art library with an extensive collection of books, journals, and digital resources. Features quiet study spaces and modern research facilities.</p>
                         </div>
@@ -340,10 +345,9 @@ body {
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="facility-card">
                         <div class="facility-image">
-                            <img src="img/lab.jpg" alt="Laboratory">
+                            <img src="facilities-img/Research-Laboratories.jpg" alt="Laboratory">
                         </div>
                         <div class="facility-content">
-                            <i class="fas fa-flask facility-icon"></i>
                             <h3 class="facility-title">Research Laboratories</h3>
                             <p class="facility-description">Advanced research laboratories equipped with modern instruments and technology for practical learning and innovation.</p>
                         </div>
@@ -354,11 +358,10 @@ body {
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="facility-card">
                         <div class="facility-image">
-                            <img src="img/sports.jpg" alt="Sports">
+                            <img src="facilities-img/computer-lab.jpg" alt="Sports">
                         </div>
                         <div class="facility-content">
-                            <i class="fas fa-running facility-icon"></i>
-                            <h3 class="facility-title">Sports Complex</h3>
+                            <h3 class="facility-title">Computer Laboratory</h3>
                             <p class="facility-description">A multi-purpose sports complex with indoor and outdoor facilities including a gymnasium, swimming pool, and multiple courts.</p>
                         </div>
                     </div>
@@ -368,10 +371,9 @@ body {
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="facility-card">
                         <div class="facility-image">
-                            <img src="img/hostel.jpg" alt="Hostel">
+                            <img src="facilities-img/hostel.jpg" alt="Hostel">
                         </div>
                         <div class="facility-content">
-                            <i class="fas fa-home facility-icon"></i>
                             <h3 class="facility-title">Student Hostels</h3>
                             <p class="facility-description">Comfortable accommodation with modern amenities, 24/7 security, and dedicated mess facilities for both boys and girls.</p>
                         </div>
@@ -382,10 +384,9 @@ body {
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="facility-card">
                         <div class="facility-image">
-                            <img src="img/cafeteria.jpg" alt="Cafeteria">
+                            <img src="facilities-img/canteen.jpg" alt="Cafeteria">
                         </div>
                         <div class="facility-content">
-                            <i class="fas fa-utensils facility-icon"></i>
                             <h3 class="facility-title">Food Court</h3>
                             <p class="facility-description">A modern cafeteria serving a variety of nutritious meals, snacks, and beverages in a comfortable dining environment.</p>
                         </div>
@@ -396,31 +397,12 @@ body {
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="facility-card">
                         <div class="facility-image">
-                            <img src="img/medical.jpg" alt="Medical Center">
+                            <img src="facilities-img/Health-Center.jpg" alt="Medical Center">
                         </div>
                         <div class="facility-content">
-                            <i class="fas fa-hospital facility-icon"></i>
                             <h3 class="facility-title">Health Center</h3>
                             <p class="facility-description">An on-campus medical facility with qualified healthcare professionals providing 24/7 emergency medical services.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Information -->
-            <div class="contact-info" data-aos="fade-up">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <h3>Need More Information?</h3>
-                        <p>Our facilities management team is here to help. Contact us for details on our campus offerings.</p>
-                        <p><i class="fas fa-phone"></i> +91 96003 33152</p>
-                        <p><i class="fas fa-envelope"></i> facilities@pkdas.edu.in</p>
-                    </div>
-                    <div class="col-md-4 text-md-end">
-                        <h3>Visiting Hours</h3>
-                        <p><i class="fas fa-clock"></i> Mon - Fri: 9 AM - 5 PM</p>
-                        <p><i class="fas fa-calendar"></i> Sat: 9 AM - 1 PM</p>
-                        <p><i class="fas fa-ban"></i> Sun: Closed</p>
                     </div>
                 </div>
             </div>
