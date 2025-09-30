@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 100);
 
     // Add click event listeners to each person div
+
     personDivs.forEach(person => {
         person.addEventListener('click', function () {
             // Get the data attribute or class name to identify this person
@@ -110,19 +111,34 @@ document.addEventListener('DOMContentLoaded', function () {
                     detailElement.style.transform = 'translateY(0)';
                 }, 50);
 
-                // Smooth scroll to the top of the About Us section
-                const aboutSection = document.getElementById('about');
-                if (aboutSection) {
-                    aboutSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                // Smooth scroll to the founder image on mobile; keep original behavior on desktop
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile) {
+                    // center the opened detail in the viewport for better UX on small screens
+                    detailElement.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+
+                    // adjust for fixed headers (optional tweak) after the scroll
+                    setTimeout(() => {
+                        // tweak value (-60) if you have a fixed header height
+                        window.scrollBy({ top: -60, left: 0, behavior: 'smooth' });
+                    }, 500);
+                } else {
+                    // Smooth scroll to the top of the About Us section on larger screens
+                    const aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        aboutSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             }
             
         });
     });
 });
+
+
 
 // placement section code starts 
 document.addEventListener('DOMContentLoaded', function () {
