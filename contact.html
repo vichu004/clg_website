@@ -22,6 +22,11 @@
     <!-- Replace the existing navigation code with this -->
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
+        <button class="btn btn-link text-dark p-0 me-3" onclick="goBack()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
         <a class="navbar-brand" href="index.html">
             <img src="img\logo.png" alt="">
         </a>
@@ -492,6 +497,23 @@
           </div>
         </div>
       </footer>
+
+ <script>
+    fetch("footer.html")
+     .then(response => response.text())
+     .then(data => {
+       document.getElementById("footer").innerHTML = data;
+       });
+
+    
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html";
+            }
+        }
+</script>
       
 
     <!-- Bootstrap JS -->
